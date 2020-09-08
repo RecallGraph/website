@@ -3,7 +3,7 @@ import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Header from '../assets/material-kit/components/Header/Header';
 import HeaderLinks from "../assets/material-kit/components/Header/HeaderLinks";
-
+import Footer from '../assets/material-kit/components/Footer/Footer';
 import landingPageStyle from "../assets/material-kit/views/landingPage";
 import HeroSection from "../components/HeroSection";
 import WhatWeOffer from "../components/WhatWeOffer";
@@ -43,6 +43,7 @@ class LandingPage extends React.Component {
         </div>
         </div>
         <UsefulLinks />
+        <Footer />
       </div>
     )
   }

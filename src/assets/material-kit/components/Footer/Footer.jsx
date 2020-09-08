@@ -68,7 +68,7 @@ function Footer({ ...props }) {
           &copy; {1900 + new Date().getYear()} , made with{" "}
           <Favorite className={classes.icon} /> by{" "}
           <a
-            href="https://www.creative-tim.com"
+            href="https://github.com/RecallGraph/RecallGraph"
             className={aClasses}
             target="_blank"
           >
