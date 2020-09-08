@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'gatsby'
 import withStyles from "@material-ui/core/styles/withStyles";
 import { FaPlay } from 'react-icons/fa';
 import Button from "../assets/material-kit/components/CustomButtons/Button";
@@ -24,7 +25,7 @@ class HeroSection extends React.Component {
                   </h4>
                   <br/>
                   <Button
-                  color="danger"
+                  color="success"
                   size="lg"
                   href="https://youtu.be/UP2KDQ_kL4I"
                   target="_blank"

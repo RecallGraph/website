@@ -1,10 +1,12 @@
 import React from "react"
+import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Header from '../assets/material-kit/components/Header/Header';
 import HeaderLinks from "../assets/material-kit/components/Header/HeaderLinks";
 
 import landingPageStyle from "../assets/material-kit/views/landingPage";
 import HeroSection from "../components/HeroSection";
+import WhatWeOffer from "../components/WhatWeOffer";
 
 const dashboardRoutes = [];
 
@@ -27,6 +29,11 @@ class LandingPage extends React.Component {
         {...rest}
         />
         <HeroSection />
+        <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container} id="whatWeOffer">
+        <WhatWeOffer />
+        </div>
+        </div>
       </div>
     )
   }
