@@ -9,6 +9,7 @@ import HeroSection from "../components/HeroSection";
 import WhatWeOffer from "../components/WhatWeOffer";
 import CarouselSection from "../components/CarouselSection";
 import AboutUs from "../components/AboutUs";
+import ContactUs from "../components/ContactUs";
 
 const dashboardRoutes = [];
 
@@ -36,6 +37,7 @@ class LandingPage extends React.Component {
         <WhatWeOffer />
         <CarouselSection />
         <AboutUs />
+        <ContactUs />
         </div>
         </div>
       </div>
