@@ -7,6 +7,7 @@ import HeaderLinks from "../assets/material-kit/components/Header/HeaderLinks";
 import landingPageStyle from "../assets/material-kit/views/landingPage";
 import HeroSection from "../components/HeroSection";
 import WhatWeOffer from "../components/WhatWeOffer";
+import CarouselSection from "../components/CarouselSection";
 
 const dashboardRoutes = [];
 
@@ -32,6 +33,7 @@ class LandingPage extends React.Component {
         <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container} id="whatWeOffer">
         <WhatWeOffer />
+        <CarouselSection />
         </div>
         </div>
       </div>
