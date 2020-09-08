@@ -1,13 +1,11 @@
 import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-
 import CloudQueueIcon from '@material-ui/icons/CloudQueue'
 import ShowChartIcon from '@material-ui/icons/ShowChart';
 import StorageIcon from '@material-ui/icons/Storage';
 import PermDataSettingIcon from '@material-ui/icons/PermDataSetting';
 import EventNoteIcon from '@material-ui/icons/EventNote';
-
 
 import GridContainer from '../assets/material-kit/components/Grid/GridContainer'
 import GridItem from '../assets/material-kit/components/Grid/GridItem'
@@ -36,8 +34,8 @@ class WhatWeOffer extends React.Component {
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={4}>
                     <InfoArea
-                      title="Enterprise Dev Ops"
-                      description="Manage, migrate and streamline your cloud infrastructure and establish a effective digital platform strategy."
+                      title="Feature One"
+                      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam odio lectus, non tempus nulla posuere sit amet. Duis dictum eu nibh sed fermentum. Donec nec neque vitae eros eleifend cursus eu sed ex."
                       icon={CloudQueueIcon}
                       iconColor="info"
                       vertical
@@ -45,8 +43,8 @@ class WhatWeOffer extends React.Component {
                   </GridItem>
                   <GridItem xs={12} sm={12} md={4}>
                     <InfoArea
-                      title="Temporal Graph Analytics"
-                      description="Run time-varying analytics on dynamic graphs to capture how relationships within your network evolve over time."
+                      title="Feature Two"
+                      description="Phasellus sit amet varius purus, porttitor lobortis felis. Mauris ex orci, mattis eu ultrices eget, molestie sed nisi. In porttitor turpis sed consequat dapibus."
                       icon={ShowChartIcon}
                       iconColor="info"
                       vertical
@@ -54,8 +52,8 @@ class WhatWeOffer extends React.Component {
                   </GridItem>
                   <GridItem xs={12} sm={12} md={4}>
                     <InfoArea
-                      title="Distributed Architecture"
-                      description="Ensure your digital transformations are scaleable and cost efficient using distributed architecture."
+                      title="Feature Three"
+                      description="Nulla fermentum ante ac fringilla accumsan. Integer efficitur eros at magna placerat, in tristique turpis consectetur."
                       icon={StorageIcon}
                       iconColor="info"
                       vertical
@@ -63,8 +61,8 @@ class WhatWeOffer extends React.Component {
                   </GridItem>
                   <GridItem xs={12} sm={12} md={4}>
                     <InfoArea
-                      title="Data Engineering"
-                      description="Build data pipelines and ensure your organisation is capturing meaningful information in appropriate data warehouses to develop a competitive advantage."
+                      title="Feature Four"
+                      description="Nunc quis mi sit amet arcu maximus viverra vulputate in mi. Donec at interdum ante, ut molestie nisi. Curabitur porttitor massa ac urna lobortis tincidunt."
                       icon={PermDataSettingIcon}
                       iconColor="info"
                       vertical
@@ -72,8 +70,8 @@ class WhatWeOffer extends React.Component {
                   </GridItem>
                   <GridItem xs={12} sm={12} md={4}>
                     <InfoArea
-                      title="Research and Development"
-                      description="Acquire industry and academic-level expertise in deep technology innovation areas with reliable and streamlined solutions"
+                      title="Feature Five"
+                      description="Praesent blandit turpis purus, at viverra diam rutrum rutrum. Proin ligula ligula, venenatis consequat cursus vitae, dapibus ac nibh."
                       icon={EventNoteIcon}
                       iconColor="info"
                       vertical

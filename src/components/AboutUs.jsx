@@ -14,20 +14,9 @@ class AboutUs extends React.Component{
                 <GridItem xs={12} sm={12} md={8}>
                   <h2 className={classes.title}>About RecallGraph</h2>
                   <h5 className={classes.description}>
-                  As the subject matter experts on temporal graph analytics, 
-                  we are a multidisciplinary team consisting of leading researchers 
-                  and commercial professionals. We have a shared vision on empowering 
-                  organisations to surface hidden insights in their data using graphs. 
-                  We work with organisations to digitally transform their cloud capabilities 
-                  and processes to maximise their ability to produce business intelligence. 
-                  Backed by scientific research, we’re spearheading the creation of future 
-                  analytical tooling, backed by state of the art DevOps expertise for CI/CD 
-                  pipelines.
+                  RecallGraph can only track history for nodes (vertices /edges) that are persisted through its write APIs. This is because it needs to update the event log every time a node is written (created / updated / deleted). If a node is written through any means outside of RecallGraph's scope, it has no way of knowing, and hence its event log would fall out of sync with the node's data.
 
-                  At Chorograph we focus on what we do best – work on deep technology solutions 
-                  that add new generational capability for high performing organisations. 
-                  We work closely with our clients to understand their critical data points and 
-                  develop solutions around them.
+                  RecallGraph supports 4 write endpoints - one each for create, update, replace and delete operations respectively. These endpoints support both individual as well as bulk node writes, and are purposely kept semantically as close to ArangoDB's core CRUD REST APIs as possible.
                   </h5>
                 </GridItem>
               </GridContainer>

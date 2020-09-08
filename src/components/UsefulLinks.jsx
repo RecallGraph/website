@@ -16,22 +16,25 @@ class UsefulLinks extends React.Component {
                 <h3 className={classes.title}>Useful Links</h3>
                 <Button
                 href="https://gitter.im/RecallGraph/community"
-                color="success"
+                color="info"
                 target="_blank"
+                rel="noopener noreferrer"
                 >
                 Community
                 </Button>
                 <Button
                 href="https://gitter.im/RecallGraph/community"
-                color="success"
+                color="info"
                 target="_blank"
+                rel="noopener noreferrer"
                 >
                 Community
                 </Button>
                 <Button
                 href="https://gitter.im/RecallGraph/community"
-                color="success"
+                color="info"
                 target="_blank"
+                rel="noopener noreferrer"
                 >
                 Community
                 </Button>
@@ -40,22 +43,25 @@ class UsefulLinks extends React.Component {
                 <h3 className={classes.title}>Contact Us</h3>
                 <Button
                 href="https://gitter.im/RecallGraph/community"
-                color="success"
+                color="info"
                 target="_blank"
+                rel="noopener noreferrer"
                 >
                 Community
                 </Button>
                 <Button
                 href="https://gitter.im/RecallGraph/community"
-                color="success"
+                color="info"
                 target="_blank"
+                rel="noopener noreferrer"
                 >
                 Community
                 </Button>
                 <Button
                 href="https://gitter.im/RecallGraph/community"
-                color="success"
+                color="info"
                 target="_blank"
+                rel="noopener noreferrer"
                 >
                 Community
                 </Button>
@@ -64,22 +70,25 @@ class UsefulLinks extends React.Component {
                 <h3 className={classes.title}>Follow Us</h3>
                 <Button
                 href="https://gitter.im/RecallGraph/community"
-                color="success"
+                color="info"
                 target="_blank"
+                rel="noopener noreferrer"
                 >
                 Community
                 </Button>
                 <Button
                 href="https://gitter.im/RecallGraph/community"
-                color="success"
+                color="info"
                 target="_blank"
+                rel="noopener noreferrer"
                 >
                 Community
                 </Button>
                 <Button
                 href="https://gitter.im/RecallGraph/community"
-                color="success"
+                color="info"
                 target="_blank"
+                rel="noopener noreferrer"
                 >
                 Community
                 </Button>

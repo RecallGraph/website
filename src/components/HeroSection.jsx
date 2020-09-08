@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'gatsby'
 import withStyles from "@material-ui/core/styles/withStyles";
 import { FaPlay } from 'react-icons/fa';
 import Button from "../assets/material-kit/components/CustomButtons/Button";
@@ -35,7 +34,7 @@ class HeroSection extends React.Component {
                   Watch video
                   </Button>
                   </GridItem>
-                </GridContainer>
+                    </GridContainer>
             </div>
         </Parallax>
         )

@@ -20,6 +20,7 @@ export default class SectionCarousel extends React.Component {
       };
       return (
         <div>
+          <h1 style={{color:"gray",textAlign:"center",fontWeight:'bold'}}>Journey So far</h1>  
           <Slider {...settings}>
             <img src={image1} alt="First slide"/>
             <img src={image2} alt="Second slide"/>
