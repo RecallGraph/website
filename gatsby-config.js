@@ -1,13 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Recall Graph`,
-    description: ``,
+    title: `RecallGraph`,
+    description: `A versioning data store for time-variant graph data.`,
     author: `@rkr-dev`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-resolve-src',
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
     'gatsby-plugin-sass',
     'gatsby-plugin-material-ui',
@@ -24,7 +23,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `recallgraph`,
-        short_name: `recall`,
+        short_name: `recallgraph`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
