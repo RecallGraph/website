@@ -1,5 +1,5 @@
 ![Logo](src/assets/img/Rg-1-trans.png)
-#  Recall Graph Website
+#  RecallGraph Website
 
 ## Quickstart
 

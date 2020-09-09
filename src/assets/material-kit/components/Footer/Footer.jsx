@@ -6,21 +6,18 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { List, ListItem, withStyles } from "@material-ui/core";
 
-// @material-ui/icons
-import Favorite from "@material-ui/icons/Favorite";
-
 import footerStyle from "../../styles/footerStyle";
 
 function Footer({ ...props }) {
-  const { classes, whiteFont } = props;
+  const { classes, whiteFont } = props
   const footerClasses = classNames({
     [classes.footer]: true,
-    [classes.footerWhiteFont]: whiteFont
-  });
+    [classes.footerWhiteFont]: whiteFont,
+  })
   const aClasses = classNames({
     [classes.a]: true,
-    [classes.footerWhiteFont]: whiteFont
-  });
+    [classes.footerWhiteFont]: whiteFont,
+  })
   return (
     <footer className={footerClasses}>
       <div className={classes.container}>
@@ -32,7 +29,7 @@ function Footer({ ...props }) {
                 className={classes.block}
                 target="_blank"
               >
-                Recall Graph
+                RecallGraph
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
@@ -55,7 +52,7 @@ function Footer({ ...props }) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://github.com/RecallGraph/RecallGraph"
+                href="https://github.com/RecallGraph/RecallGraph/blob/development/LICENSE"
                 className={classes.block}
                 target="_blank"
               >
@@ -65,25 +62,23 @@ function Footer({ ...props }) {
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
+          &copy; {1900 + new Date().getYear()},{" "}
           <a
-            href="https://github.com/RecallGraph/RecallGraph"
+            href="https://github.com/RecallGraph"
             className={aClasses}
             target="_blank"
           >
-            Recall Graph
-          </a>{" "}
-          for a better web.
+            RecallGraph
+          </a>.
         </div>
       </div>
     </footer>
-  );
+  )
 }
 
 Footer.propTypes = {
   classes: PropTypes.object.isRequired,
-  whiteFont: PropTypes.bool
-};
+  whiteFont: PropTypes.bool,
+}
 
-export default withStyles(footerStyle)(Footer);
+export default withStyles(footerStyle)(Footer)
