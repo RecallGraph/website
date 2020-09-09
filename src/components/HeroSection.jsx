@@ -19,7 +19,7 @@ class HeroSection extends React.Component {
                 options={{
                   background: {
                     color: {
-                      value: "#000",
+                      value: "#2F4F4F"
                     },
                     image: 'url("/Rg-1-trans.png")',
                     position: "50% 50%",
@@ -84,7 +84,7 @@ class HeroSection extends React.Component {
                         enable: true,
                         value_area: 800,
                       },
-                      value: 50,
+                      value: 80,
                     },
                     opacity: {
                       value: 0.5,

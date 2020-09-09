@@ -1,5 +1,5 @@
 {
-  "name": "recall-graph",
+  "name": "recallgraph",
   "private": true,
   "description": "A versioning data store for time-variant graph data.",
   "version": "0.1.0",
@@ -59,9 +59,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/RecallGraph/website"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/RecallGraph/website/issues"
   }
 }
