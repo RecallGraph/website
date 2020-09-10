@@ -1,38 +1,109 @@
 import withStyles from "@material-ui/core/styles/withStyles"
 import React from "react"
-import { FaPlay } from "react-icons/fa"
-import Button from "../assets/material-kit/components/CustomButtons/Button"
+import Particles from "react-tsparticles"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
 import Parallax from "../assets/material-kit/components/Parallax/Parallax"
 import landingPageStyle from "../assets/material-kit/views/landingPage"
 
 class HeroSection extends React.Component {
-  render () {
+  render() {
     const { classes } = this.props
     return (
-      <Parallax filter image={require("../assets/img/Rg-2-trans.png")}>
+      <Parallax>
         <div className={classes.container}>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
-              <h4>
-                RecallGraph is a versioned-graph data store - it retains all
-                changes that its data (vertices and edges) have gone through to
-                reach their current state. It supports point-in-time graph
-                traversals, letting the user query any past state of the graph
-                just as easily as the present.
-              </h4>
-              <br/>
-              <Button
-                color="success"
-                size="lg"
-                href="https://youtu.be/UP2KDQ_kL4I"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaPlay/>
-                Watch video
-              </Button>
+            <GridItem xs={12} sm={12} md={12}>
+              <Particles
+                id="tsparticles"
+                options={{
+                  background: {
+                    color: {
+                      value: "#2F4F4F"
+                    },
+                    image: 'url("/Rg-1-trans.png")',
+                    position: "50% 50%",
+                    repeat: "no-repeat",
+                    size: "contain",
+                    opacity: 1
+                  },
+                  fpsLimit: 30,
+                  interactivity: {
+                    detectsOn: "canvas",
+                    events: {
+                      onClick: {
+                        enable: false,
+                        mode: "push",
+                      },
+                      onHover: {
+                        enable: false,
+                        mode: "repulse",
+                      },
+                      resize: true,
+                    },
+                    modes: {
+                      bubble: {
+                        distance: 400,
+                        duration: 2,
+                        opacity: 0.8,
+                        size: 40,
+                      },
+                      push: {
+                        quantity: 4,
+                      },
+                      repulse: {
+                        distance: 200,
+                        duration: 0.4,
+                      },
+                    },
+                  },
+                  particles: {
+                    color: {
+                      value: "#228dd5",
+                    },
+                    links: {
+                      color: "#a6d522",
+                      distance: 150,
+                      enable: true,
+                      opacity: 0.5,
+                      width: 2,
+                    },
+                    collisions: {
+                      enable: true,
+                    },
+                    move: {
+                      direction: "none",
+                      enable: true,
+                      outMode: "bounce",
+                      random: true,
+                      speed: 2,
+                      straight: false,
+                    },
+                    number: {
+                      density: {
+                        enable: true,
+                        value_area: 800,
+                      },
+                      value: 80,
+                    },
+                    opacity: {
+                      value: 0.5,
+                    },
+                    shape: {
+                      type: "circle",
+                    },
+                    size: {
+                      value: 5,
+                      animation: {
+                        enable: true,
+                        minimumValue: 1,
+                        speed: 10
+                      }
+                    },
+                  },
+                  detectRetina: true,
+                }}
+              />
             </GridItem>
           </GridContainer>
         </div>

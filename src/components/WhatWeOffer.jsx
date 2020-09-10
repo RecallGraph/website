@@ -1,86 +1,110 @@
-import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
+import withStyles from "@material-ui/core/styles/withStyles"
 
-import CloudQueueIcon from '@material-ui/icons/CloudQueue'
-import ShowChartIcon from '@material-ui/icons/ShowChart';
-import StorageIcon from '@material-ui/icons/Storage';
-import PermDataSettingIcon from '@material-ui/icons/PermDataSetting';
-import EventNoteIcon from '@material-ui/icons/EventNote';
-
-import GridContainer from '../assets/material-kit/components/Grid/GridContainer'
-import GridItem from '../assets/material-kit/components/Grid/GridItem'
-import InfoArea from '../assets/material-kit/components/InfoArea/InfoArea'
-
-import productStyle from '../assets/material-kit/views/productStyle'
+import {
+  LineWeight,
+  BarChart,
+  HelpOutline,
+  Http,
+  Storage,
+  History,
+} from "@material-ui/icons"
+import React from "react"
+import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
+import GridItem from "../assets/material-kit/components/Grid/GridItem"
+import InfoArea from "../assets/material-kit/components/InfoArea/InfoArea"
+import productStyle from "../assets/material-kit/views/productStyle"
 
 class WhatWeOffer extends React.Component {
-    render() {
-        const { classes } = this.props;
-        return (
-            <div className={classes.section}>
-              <GridContainer justify="center">
-                <GridItem xs={12} sm={12} md={8}>
-                  <h2 className={classes.title}>What we offer</h2>
-                  <h5 className={classes.description}>
-                    This is the paragraph where you can write more details about your
-                    product. Keep you user engaged by providing meaningful
-                    information. Remember that by this time, the user is curious,
-                    otherwise he wouldn't scroll to get here. Add a button if you want
-                    the user to see more.
-                  </h5>
-                </GridItem>
-              </GridContainer>
-              <div>
-                <GridContainer>
-                  <GridItem xs={12} sm={12} md={4}>
-                    <InfoArea
-                      title="Feature One"
-                      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam odio lectus, non tempus nulla posuere sit amet. Duis dictum eu nibh sed fermentum. Donec nec neque vitae eros eleifend cursus eu sed ex."
-                      icon={CloudQueueIcon}
-                      iconColor="info"
-                      vertical
-                    />
-                  </GridItem>
-                  <GridItem xs={12} sm={12} md={4}>
-                    <InfoArea
-                      title="Feature Two"
-                      description="Phasellus sit amet varius purus, porttitor lobortis felis. Mauris ex orci, mattis eu ultrices eget, molestie sed nisi. In porttitor turpis sed consequat dapibus."
-                      icon={ShowChartIcon}
-                      iconColor="info"
-                      vertical
-                    />
-                  </GridItem>
-                  <GridItem xs={12} sm={12} md={4}>
-                    <InfoArea
-                      title="Feature Three"
-                      description="Nulla fermentum ante ac fringilla accumsan. Integer efficitur eros at magna placerat, in tristique turpis consectetur."
-                      icon={StorageIcon}
-                      iconColor="info"
-                      vertical
-                    />
-                  </GridItem>
-                  <GridItem xs={12} sm={12} md={4}>
-                    <InfoArea
-                      title="Feature Four"
-                      description="Nunc quis mi sit amet arcu maximus viverra vulputate in mi. Donec at interdum ante, ut molestie nisi. Curabitur porttitor massa ac urna lobortis tincidunt."
-                      icon={PermDataSettingIcon}
-                      iconColor="info"
-                      vertical
-                    />
-                  </GridItem>
-                  <GridItem xs={12} sm={12} md={4}>
-                    <InfoArea
-                      title="Feature Five"
-                      description="Praesent blandit turpis purus, at viverra diam rutrum rutrum. Proin ligula ligula, venenatis consequat cursus vitae, dapibus ac nibh."
-                      icon={EventNoteIcon}
-                      iconColor="info"
-                      vertical
-                    />
-                  </GridItem>
-                </GridContainer>
-              </div>
-            </div>
-          );
-    }
+  render() {
+    const { classes } = this.props
+    return (
+      <div className={classes.section}>
+        <GridContainer justify="center">
+          <GridItem xs={12} sm={12} md={8}>
+            <h2 className={classes.title}>
+              A versioning data store for time-variant graph data.
+            </h2>
+            <h4 className={classes.description}>
+              <p align="left">
+                RecallGraph is a versioned-graph data store - it retains all
+                changes that its data (vertices and edges) have gone through to
+                reach their current state.
+              </p>
+              <p align="left">
+                It supports point-in-time graph traversals, letting the user
+                query any past state of the graph just as easily as the present.
+              </p>
+            </h4>
+          </GridItem>
+        </GridContainer>
+        <div>
+          <GridContainer>
+            <GridItem xs={12} sm={12} md={4}>
+              <InfoArea
+                title="ACID Transactions"
+                description="All write operations are wrapped in ACID-compliant transactions, so your data is
+                      always consistent."
+                icon={Storage}
+                iconColor="info"
+                vertical
+              />
+            </GridItem>
+            <GridItem xs={12} sm={12} md={4}>
+              <InfoArea
+                title="REST API"
+                description="Access all functionality through REST API endpoints. Integrate into any stack.
+                      Call the API from anywhere, including servers and browsers."
+                icon={Http}
+                iconColor="info"
+                vertical
+              />
+            </GridItem>
+            <GridItem xs={12} sm={12} md={4}>
+              <InfoArea
+                title="Recoverable Deletes, Purge, Import and more..."
+                description="Any data that you delete can always be restored, unless its history is explicitly
+                      purged from the database. You can also import your existing non-temporal data and begin tracking
+                      revisions from there."
+                icon={LineWeight}
+                iconColor="info"
+                vertical
+              />
+            </GridItem>
+            <GridItem xs={12} sm={12} md={4}>
+              <InfoArea
+                title="Point-in-Time"
+                description="Travel back in time to view individual node/edges states from the past, or run graph
+                      traversals or shortest-path queries on historical graph states."
+                icon={History}
+                iconColor="info"
+                vertical
+              />
+            </GridItem>
+            <GridItem xs={12} sm={12} md={4}>
+              <InfoArea
+                title="Distributed Tracing Support"
+                description="RecallGraph is an OpenTracing-compliant service. Plug into your existing distributed
+                      tracing infrastructure and get insights and performance metrics OOTB."
+                icon={BarChart}
+                iconColor="info"
+                vertical
+              />
+            </GridItem>
+            <GridItem xs={12} sm={12} md={4}>
+              <InfoArea
+                title="Extensive Documentation"
+                description="Well designed documentation to familiarize you with the core concepts and get you
+                      up and running in the shortest time possible."
+                icon={HelpOutline}
+                iconColor="info"
+                vertical
+              />
+            </GridItem>
+          </GridContainer>
+        </div>
+      </div>
+    )
+  }
 }
-export default withStyles(productStyle)(WhatWeOffer);
+
+export default withStyles(productStyle)(WhatWeOffer)

@@ -1,5 +1,5 @@
 {
-  "name": "recall-graph",
+  "name": "recallgraph",
   "private": true,
   "description": "A versioning data store for time-variant graph data.",
   "version": "0.1.0",
@@ -9,8 +9,8 @@
     "@fortawesome/free-brands-svg-icons": "^5.7.2",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@material-ui/core": "^3.9.2",
-    "@material-ui/icons": "^3.0.2",
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "classnames": "^2.2.6",
     "core-js": "^2.6.5",
     "gatsby": "^2.24.50",
@@ -32,11 +32,11 @@
     "react-datetime": "^2.16.3",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
-    "react-icon": "^1.0.0",
     "react-icons": "^3.5.0",
     "react-router-dom": "^4.3.1",
     "react-slick": "^0.23.2",
     "react-swipeable-views": "^0.13.1",
+    "react-tsparticles": "^1.17.10",
     "slick-carousel": "^1.8.1",
     "typeface-roboto": "0.0.54",
     "typeface-roboto-slab": "0.0.72"
@@ -59,9 +59,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/RecallGraph/website"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/RecallGraph/website/issues"
   }
 }
