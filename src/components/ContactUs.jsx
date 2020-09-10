@@ -44,7 +44,6 @@ class ContactUs extends React.Component{
     }
     render(){
         const { classes } = this.props;
-        const service_id = process.env.GATSBY_EMAILJS_SERVICE_ID;
         return(
             <div className={classes.section}>
               console.log('service_id',service_id)
