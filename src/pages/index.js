@@ -36,8 +36,8 @@ class LandingPage extends React.Component {
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container} id="whatWeOffer">
             <WhatWeOffer/>
-            <CarouselSection/>
             <AboutUs/>
+            <CarouselSection/>
             <ContactUs/>
 
           </div>
