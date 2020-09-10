@@ -56,6 +56,7 @@ class LandingPage extends React.Component {
                 />
 
             <AboutUs/>
+            <CarouselSection/>
             <ContactUs/>
 
           </div>

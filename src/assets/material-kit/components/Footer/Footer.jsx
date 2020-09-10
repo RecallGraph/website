@@ -34,16 +34,7 @@ function Footer({ ...props }) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://github.com/RecallGraph/RecallGraph"
-                className={classes.block}
-                target="_blank"
-              >
-                About us
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://github.com/RecallGraph/RecallGraph"
+                href="https://adityamukho.com/tag/historical-graphs/"
                 className={classes.block}
                 target="_blank"
               >
@@ -56,7 +47,7 @@ function Footer({ ...props }) {
                 className={classes.block}
                 target="_blank"
               >
-                Licenses
+                License
               </a>
             </ListItem>
           </List>
@@ -69,7 +60,7 @@ function Footer({ ...props }) {
             target="_blank"
           >
             RecallGraph
-          </a>.
+          </a>. All rights reserved.
         </div>
       </div>
     </footer>
