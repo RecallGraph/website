@@ -6,11 +6,12 @@ import Header from "../assets/material-kit/components/Header/Header"
 import HeaderLinks from "../assets/material-kit/components/Header/HeaderLinks"
 import landingPageStyle from "../assets/material-kit/views/landingPage"
 import AboutUs from "../components/AboutUs"
-import CarouselSection from "../components/CarouselSection"
+// import CarouselSection from "../components/CarouselSection"
 import ContactUs from "../components/ContactUs"
 import HeroSection from "../components/HeroSection"
 import UsefulLinks from "../components/UsefulLinks"
 import WhatWeOffer from "../components/WhatWeOffer"
+import YoutubeVideo from "../components/YoutubeVideo"
 
 const dashboardRoutes = []
 
@@ -34,9 +35,26 @@ class LandingPage extends React.Component {
         />
         <HeroSection/>
         <div className={classNames(classes.main, classes.mainRaised)}>
-          <div className={classes.container} id="whatWeOffer">
+          <div className={classes.container}>
             <WhatWeOffer/>
-            <CarouselSection/>
+            {/* <CarouselSection/> */}
+            <YoutubeVideo 
+              video="UP2KDQ_kL4I" 
+              autoplay="0" 
+              rel="0" 
+              modest="1"
+              title="RecallGraph as a versioning data store"
+              description="RecallGraph retains all changes that its data (vertices and edges) have gone through to reach their current state. "
+              />
+            <YoutubeVideo 
+              video="A953O3hT1Os" 
+              autoplay="0" 
+              rel="0" 
+              modest="1"
+              title="Open Source Directions hosted by OpenTeams"
+              description="Open Source Directions we were joined by Aditya Mukhopadhyay who talked about the work he has been doing with RecallGraph."
+                />
+
             <AboutUs/>
             <ContactUs/>
 
