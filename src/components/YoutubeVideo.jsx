@@ -24,11 +24,11 @@ class YoutubeVideo extends React.Component{
             <h4 className={classes.description}>
             {this.props.description}
             </h4>
-            <iframe 
-                className="player" 
-                type="text/html" 
-                width="100%" 
-                height="100%"
+            <iframe
+                title={this.props.title}
+                className="player"
+                width="100%"
+                height='400vh'
                 src={videoSrc}
                 frameBorder="0"/>
             </GridItem>
