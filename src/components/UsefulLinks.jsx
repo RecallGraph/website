@@ -12,7 +12,7 @@ class UsefulLinks extends React.Component {
                   <div className={classes.section} style={{ backgroundColor: "#fafafa" }}>
                           <GridContainer justify="center">
                                   <GridItem xs={12} sm={12} md={12}>
-                                          <h3 className={classes.title}>Useful Links</h3>
+                                          <h2 className={classes.title}>Useful Links</h2>
                                           <Button
                                             href="https://github.com/RecallGraph/RecallGraph"
                                             color="info"
