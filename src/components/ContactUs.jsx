@@ -7,6 +7,10 @@ import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
 import workStyle from "../assets/material-kit/views/workStyle"
 import Recaptcha from 'react-recaptcha'
+import Snackbar from '@material-ui/core/Snackbar';
+import Fade from '@material-ui/core/Fade';
+
+
 
 class ContactUs extends React.Component {
   constructor (props) {
@@ -15,42 +19,73 @@ class ContactUs extends React.Component {
       name: "",
       email: "",
       message: "",
+      open:true,
+      Transition: Fade,
+      status:''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleClose = this.handleClose.bind(this);
+    this.handleCaptchaLoad = this.handleCaptchaLoad.bind(this);
+    this.verifyCallback = this.verifyCallback.bind(this);
   }
+
+  handleClose() {
+    this.setState({
+      ...this.state,
+      open: false,
+    });
+  };
+
+  handleClick(Transition) {
+    this.setState({
+      open: true,
+      Transition,
+    });
+  };
 
   handleChange (e) {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  handleCaptchaLoad(event) {
+    console.log('handleCaptchaLoad')
+  }
+
+  verifyCallback(event) {
+    return event;
+  }
+
   handleSubmit (e) {
     const service_id = process.env.GATSBY_EMAILJS_SERVICE_ID
     const template_id = process.env.GATSBY_EMAILJS_TEMPLATE_ID
-    const user_id = process.env.GATSBY_EMAILJS_USER_ID
+    // const user_id = process.env.GATSBY_EMAILJS_USER_ID
+    const user_id = "user_M23qURHUeUhH8KoE6X7Nf";
     e.preventDefault()
-    init("USER_ID")
-    emailjs
-      .sendForm(service_id, template_id, e.target, user_id)
-      .then(result => {
-        console.log(result.text)
-      })
-      .catch(err => console.log(err))
-      .finally(() => {
-        this.setState({
-          name: "",
-          email: "",
-          message: "",
+    if(this.verifyCallback() !== '') {
+      init(user_id)
+      emailjs
+        .sendForm(service_id, template_id, e.target, user_id)
+        .then(result => {
+          this.setState({status:'Message sent successfully',open:true})
         })
-        alert("Message Sent Successfully")
-      })
+        .catch(err => this.setState({status:'Sending failed. Please try again',open:true}))
+        .finally(() => {
+          this.setState({
+            name: "",
+            email: "",
+            message: "",
+          })
+        })
+    } else {
+      this.setState({status:'Captcha failed. Please select again',open:true})
+    }
   }
 
   render () {
     const { classes } = this.props
     return (
       <div className={classes.section}>
-        console.log('service_id',service_id)
         <GridContainer justify="center">
           <GridItem cs={12} sm={12} md={8}>
             <h2 className={classes.title}>Contact Us</h2>
@@ -70,6 +105,7 @@ class ContactUs extends React.Component {
                       fullWidth: true,
                     }}
                     inputProps={{
+                      required:true,
                       value: this.state.name,
                       name: "name",
                       onChange: this.handleChange,
@@ -86,6 +122,7 @@ class ContactUs extends React.Component {
                       fullWidth: true,
                     }}
                     inputProps={{
+                      type:'email',
                       value: this.state.email,
                       name: "email",
                       onChange: this.handleChange,
@@ -102,6 +139,7 @@ class ContactUs extends React.Component {
                     className: classes.textArea,
                   }}
                   inputProps={{
+                    required:true,
                     multiline: true,
                     rows: 5,
                     value: this.state.message,
@@ -115,7 +153,12 @@ class ContactUs extends React.Component {
                     sm={12}
                     md={8}
                   >
-                    <Recaptcha sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}/>
+                   <Recaptcha 
+                   sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
+                   render="explicit"
+                   verifyCallback={this.verifyCallback}
+                   onloadCallback={this.handleCaptchaLoad}
+                   />
                   </GridItem>
                   <GridItem
                     xs={12}
@@ -126,6 +169,14 @@ class ContactUs extends React.Component {
                     <Button color="primary" type="submit">
                       Send Message
                     </Button>
+                  </GridItem>
+                  <GridItem>
+                  <Snackbar 
+                  open={this.state.open}
+                  onClose={this.handleClose}
+                  message={this.state.message}
+                  TransitionComponent={state.Transition}
+                  />
                   </GridItem>
                 </GridContainer>
               </GridContainer>
