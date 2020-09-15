@@ -11,6 +11,8 @@ import HeroSection from "../components/HeroSection"
 import UsefulLinks from "../components/UsefulLinks"
 import WhatWeOffer from "../components/WhatWeOffer"
 import YoutubeVideo from "../components/YoutubeVideo"
+import SEO from '../components/seo'
+import image from '../../static//Rg-1-trans.png'
 
 const dashboardRoutes = []
 
@@ -20,6 +22,7 @@ class LandingPage extends React.Component {
 
     return (
       <div>
+        <SEO title="RecallGraph - versioning data store for time-variant graph data." image={image}/>
         <Header
           color="transparent"
           routes={dashboardRoutes}

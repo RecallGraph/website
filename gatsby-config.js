@@ -6,7 +6,29 @@ module.exports = {
   siteMetadata: {
     title: `RecallGraph`,
     description: `A versioning data store for time-variant graph data.`,
-    author: `@rkr-dev`,
+    author: `@rkr-dev,`,
+    image: `https://i.imgur.com/nktgBWh.png`,
+    keywords:['recallgraph','graphdata'],
+    siteUrl:'https://github.com/RecallGraph',
+    siteVerification: {
+      google: '',
+      bing: ''
+    },
+    social: {
+      twitter: '@recallgraph'
+    },
+    socialLinks:{
+      github:``,
+      twitter:``,
+      facebook:``,
+      instagram:``,
+      linkedin:``,
+      email:``
+    },
+    organization: {
+      name: ``,
+      url: ``
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
