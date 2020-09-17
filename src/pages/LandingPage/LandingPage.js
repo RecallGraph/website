@@ -1,4 +1,5 @@
 import React from "react"
+import { StaticQuery,graphql } from "gatsby"
 import classNames from "classnames"
 import withStyles from "@material-ui/core/styles/withStyles"
 import Footer from "../../assets/material-kit/components/Footer/Footer"
@@ -17,9 +18,9 @@ import image from '../../../static/Rg-1-trans.png'
 const dashboardRoutes = []
 
 class LandingPage extends React.Component {
+  
   render() {
     const { classes, ...rest } = this.props
-
     return (
       <div>
         <SEO title="RecallGraph - versioning data store for time-variant graph data." image={image}/>
@@ -35,7 +36,23 @@ class LandingPage extends React.Component {
           }}
           {...rest}
         />
-        <HeroSection />
+    <StaticQuery
+    query={graphql`
+      {
+        allFile (filter: {name: {eq: "Rg-1-trans"}}) {
+          nodes {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    `}
+    render={data => <HeroSection image={data.allFile.nodes[0].childImageSharp.fluid}/>}
+  ></StaticQuery>
+        
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <WhatWeOffer />
