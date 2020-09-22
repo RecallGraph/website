@@ -1,18 +1,18 @@
-import React from "react";
-import {createMemoryHistory} from "history";
-import {Route, Router, Switch} from "react-router-dom";
+import React from "react"
+import { createMemoryHistory } from "history"
+import { Route, Router, Switch } from "react-router-dom"
 
-import 'typeface-roboto';
-import 'typeface-roboto-slab';
+import "typeface-roboto"
+import "typeface-roboto-slab"
 
-import LandingPage from "./LandingPage/LandingPage";
+import LandingPage from "./LandingPage/LandingPage"
 
-let hist = createMemoryHistory();
+let hist = createMemoryHistory()
 
 export default () => (
-    <Router history={hist}>
-      <Switch>
-        <Route path="/" component={LandingPage} />
-      </Switch>
-    </Router>
-  );
+  <Router history={hist}>
+    <Switch>
+      <Route path="/" component={LandingPage} />
+    </Switch>
+  </Router>
+)

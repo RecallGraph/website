@@ -29,10 +29,11 @@ function SEO({ description, lang, image, meta, keywords, title, pathname }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const metaImage = image && image.src ? `${site.siteMetadata.siteUrl}${image.src}` : null
+  const metaImage =
+    image && image.src ? `${site.siteMetadata.siteUrl}${image.src}` : null
   const metaUrl = `${site.siteMetadata.siteUrl}${pathname}`
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
-  
+
   return (
     <Helmet
       htmlAttributes={{
@@ -100,50 +101,49 @@ function SEO({ description, lang, image, meta, keywords, title, pathname }) {
           content: metaDescription,
         },
       ]
-      .concat(
-        metaImage
-          ? [
-              {
-                property: `og:image`,
-                content: metaImage,
-              },
-              {
-                property: `og:image:alt`,
-                content: title,
-              },
-              {
-                property: "og:image:width",
-                content: image.width,
-              },
-              {
-                property: "og:image:height",
-                content: image.height,
-              },
-              {
-                name: `twitter:card`,
-                content: `summary_large_image`,
-              },
-            ]
-          : [
-              {
-                name: `twitter:card`,
-                content: `summary`,
-              },
-            ]
-      )
-      .concat(
-        keywords.length > 0
-          ? {
-              name: `keywords`,
-              content: keywords.join(`, `),
-            }
-          : []
-      )
-      .concat(meta)}
+        .concat(
+          metaImage
+            ? [
+                {
+                  property: `og:image`,
+                  content: metaImage,
+                },
+                {
+                  property: `og:image:alt`,
+                  content: title,
+                },
+                {
+                  property: "og:image:width",
+                  content: image.width,
+                },
+                {
+                  property: "og:image:height",
+                  content: image.height,
+                },
+                {
+                  name: `twitter:card`,
+                  content: `summary_large_image`,
+                },
+              ]
+            : [
+                {
+                  name: `twitter:card`,
+                  content: `summary`,
+                },
+              ]
+        )
+        .concat(
+          keywords.length > 0
+            ? {
+                name: `keywords`,
+                content: keywords.join(`, `),
+              }
+            : []
+        )
+        .concat(meta)}
     >
-{console.log(metaImage)}
+      {console.log(metaImage)}
     </Helmet>
-    
   )
 }
 
