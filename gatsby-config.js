@@ -8,34 +8,34 @@ module.exports = {
     description: `A versioning data store for time-variant graph data.`,
     author: `@rkr-dev,`,
     image: `https://i.imgur.com/nktgBWh.png`,
-    keywords:['recallgraph','graphdata'],
-    siteUrl:'https://github.com/RecallGraph',
+    keywords: ["recallgraph", "graphdata"],
+    siteUrl: "https://github.com/RecallGraph",
     siteVerification: {
-      google: '',
-      bing: ''
+      google: "",
+      bing: "",
     },
     social: {
-      twitter: '@recallgraph'
+      twitter: "@recallgraph",
     },
-    socialLinks:{
-      github:``,
-      twitter:``,
-      facebook:``,
-      instagram:``,
-      linkedin:``,
-      email:``
+    socialLinks: {
+      github: ``,
+      twitter: ``,
+      facebook: ``,
+      instagram: ``,
+      linkedin: ``,
+      email: ``,
     },
     organization: {
       name: ``,
-      url: ``
+      url: ``,
     },
   },
   plugins: [
-    'gatsby-plugin-resolve-src',
+    "gatsby-plugin-resolve-src",
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
-    'gatsby-plugin-sass',
-    'gatsby-plugin-material-ui',
+    "gatsby-plugin-sass",
+    "gatsby-plugin-material-ui",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -46,7 +46,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
-    resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
         trackingId: "UA-165340753-2",

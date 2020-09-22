@@ -1,12 +1,12 @@
 /*eslint-disable*/
-import React from "react";
+import React from "react"
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 // nodejs library that concatenates classes
-import classNames from "classnames";
-import { List, ListItem, withStyles } from "@material-ui/core";
+import classNames from "classnames"
+import { List, ListItem, withStyles } from "@material-ui/core"
 
-import footerStyle from "../../styles/footerStyle";
+import footerStyle from "../../styles/footerStyle"
 
 function Footer({ ...props }) {
   const { classes, whiteFont } = props
@@ -60,7 +60,8 @@ function Footer({ ...props }) {
             target="_blank"
           >
             RecallGraph
-          </a>. All rights reserved.
+          </a>
+          . All rights reserved.
         </div>
       </div>
     </footer>

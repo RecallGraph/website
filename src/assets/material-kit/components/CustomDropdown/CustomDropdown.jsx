@@ -1,49 +1,49 @@
-import React from "react";
+import React from "react"
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from "classnames"
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from "prop-types"
 
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
-import ClickAwayListener from "@material-ui/core/ClickAwayListener";
-import Paper from "@material-ui/core/Paper";
-import Grow from "@material-ui/core/Grow";
-import Divider from "@material-ui/core/Divider";
-import Icon from "@material-ui/core/Icon";
-import Popper from "@material-ui/core/Popper";
+import withStyles from "@material-ui/core/styles/withStyles"
+import MenuItem from "@material-ui/core/MenuItem"
+import MenuList from "@material-ui/core/MenuList"
+import ClickAwayListener from "@material-ui/core/ClickAwayListener"
+import Paper from "@material-ui/core/Paper"
+import Grow from "@material-ui/core/Grow"
+import Divider from "@material-ui/core/Divider"
+import Icon from "@material-ui/core/Icon"
+import Popper from "@material-ui/core/Popper"
 
 // core components
-import Button from "../CustomButtons/Button";
+import Button from "../CustomButtons/Button"
 
-import customDropdownStyle from "../../styles/customDropdownStyle";
+import customDropdownStyle from "../../styles/customDropdownStyle"
 
 class CustomDropdown extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      open: false
-    };
+      open: false,
+    }
   }
   handleClick = () => {
-    this.setState(state => ({ open: !state.open }));
-  };
+    this.setState(state => ({ open: !state.open }))
+  }
   handleClose = param => {
-    this.setState({ open: false });
+    this.setState({ open: false })
     if (this.props && this.props.onClick) {
-      this.props.onClick(param);
+      this.props.onClick(param)
     }
-  };
+  }
   handleCloseAway = event => {
     if (this.anchorEl.contains(event.target)) {
-      return;
+      return
     }
-    this.setState({ open: false });
-  };
+    this.setState({ open: false })
+  }
   render() {
-    const { open } = this.state;
+    const { open } = this.state
     const {
       classes,
       buttonText,
@@ -56,33 +56,34 @@ class CustomDropdown extends React.Component {
       hoverColor,
       left,
       rtlActive,
-      noLiPadding
-    } = this.props;
+      noLiPadding,
+    } = this.props
     const caretClasses = classNames({
       [classes.caret]: true,
       [classes.caretActive]: open,
-      [classes.caretRTL]: rtlActive
-    });
+      [classes.caretRTL]: rtlActive,
+    })
     const dropdownItem = classNames({
       [classes.dropdownItem]: true,
       [classes[hoverColor + "Hover"]]: true,
       [classes.noLiPadding]: noLiPadding,
-      [classes.dropdownItemRTL]: rtlActive
-    });
-    let icon = null;
+      [classes.dropdownItemRTL]: rtlActive,
+    })
+    let icon
     switch (typeof buttonIcon) {
       case "function":
-        icon = <this.props.buttonIcon className={classes.buttonIcon} />;
-        break;
+        icon = <this.props.buttonIcon className={classes.buttonIcon} />
+        break
       case "string":
         icon = (
           <Icon className={classes.buttonIcon}>{this.props.buttonIcon}</Icon>
-        );
-        break;
+        )
+        break
       default:
-        icon = null;
-        break;
+        icon = null
+        break
     }
+    // noinspection JSUnusedLocalSymbols
     return (
       <div>
         <div>
@@ -92,7 +93,7 @@ class CustomDropdown extends React.Component {
             aria-haspopup="true"
             {...buttonProps}
             buttonRef={node => {
-              this.anchorEl = node;
+              this.anchorEl = node
             }}
             onClick={this.handleClick}
           >
@@ -117,7 +118,7 @@ class CustomDropdown extends React.Component {
           }
           className={classNames({
             [classes.popperClose]: !open,
-            [classes.popperResponsive]: true
+            [classes.popperResponsive]: true,
           })}
         >
           {({ TransitionProps, placement }) => (
@@ -149,7 +150,7 @@ class CustomDropdown extends React.Component {
                             onClick={() => this.handleClose("divider")}
                             className={classes.dropdownDividerItem}
                           />
-                        );
+                        )
                       }
                       return (
                         <MenuItem
@@ -159,7 +160,7 @@ class CustomDropdown extends React.Component {
                         >
                           {prop}
                         </MenuItem>
-                      );
+                      )
                     })}
                   </MenuList>
                 </ClickAwayListener>
@@ -168,14 +169,14 @@ class CustomDropdown extends React.Component {
           )}
         </Popper>
       </div>
-    );
+    )
   }
 }
 
 CustomDropdown.defaultProps = {
   caret: true,
-  hoverColor: "primary"
-};
+  hoverColor: "primary",
+}
 
 CustomDropdown.propTypes = {
   classes: PropTypes.object.isRequired,
@@ -186,7 +187,7 @@ CustomDropdown.propTypes = {
     "success",
     "warning",
     "danger",
-    "rose"
+    "rose",
   ]),
   buttonText: PropTypes.node,
   buttonIcon: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
@@ -199,7 +200,7 @@ CustomDropdown.propTypes = {
   left: PropTypes.bool,
   noLiPadding: PropTypes.bool,
   // function that retuns the selected item
-  onClick: PropTypes.func
-};
+  onClick: PropTypes.func,
+}
 
-export default withStyles(customDropdownStyle)(CustomDropdown);
+export default withStyles(customDropdownStyle)(CustomDropdown)

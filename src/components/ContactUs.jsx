@@ -12,7 +12,7 @@ import Fade from "@material-ui/core/Fade"
 import CircularProgress from "@material-ui/core/CircularProgress"
 
 class ContactUs extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       name: "",
@@ -22,7 +22,7 @@ class ContactUs extends React.Component {
       Transition: Fade,
       status: "",
       verified: false,
-      loading: false
+      loading: false,
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -30,28 +30,28 @@ class ContactUs extends React.Component {
     this.verifyCallback = this.verifyCallback.bind(this)
   }
 
-  handleClose () {
+  handleClose() {
     this.setState({
-      open: false
+      open: false,
     })
-  };
+  }
 
-  handleClick (Transition) {
+  handleClick(Transition) {
     this.setState({
       open: true,
-      Transition
+      Transition,
     })
-  };
+  }
 
-  handleChange (e) {
+  handleChange(e) {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  verifyCallback () {
+  verifyCallback() {
     this.setState({ verified: true })
   }
 
-  handleSubmit (e) {
+  handleSubmit(e) {
     const service_id = process.env.GATSBY_EMAILJS_SERVICE_ID
     const template_id = process.env.GATSBY_EMAILJS_TEMPLATE_ID
     const user_id = process.env.GATSBY_EMAILJS_USER_ID
@@ -65,26 +65,30 @@ class ContactUs extends React.Component {
         .then(() => {
           this.setState({ status: "Message sent successfully", open: true })
         })
-        .catch(() => this.setState({ status: "Sending failed. Please try again", open: true }))
+        .catch(() =>
+          this.setState({
+            status: "Sending failed. Please try again",
+            open: true,
+          })
+        )
         .finally(() => {
           this.setState({
             name: "",
             email: "",
             message: "",
-            loading: false
+            loading: false,
           })
         })
-    }
-    else {
+    } else {
       this.setState({
         status: "Captcha not verified. Please select again.",
         open: true,
-        loading: false
+        loading: false,
       })
     }
   }
 
-  render () {
+  render() {
     const { classes } = this.props
     return (
       <div className={classes.section}>
@@ -104,13 +108,13 @@ class ContactUs extends React.Component {
                     name="name"
                     type="text"
                     formControlProps={{
-                      fullWidth: true
+                      fullWidth: true,
                     }}
                     inputProps={{
                       required: true,
                       value: this.state.name,
                       name: "name",
-                      onChange: this.handleChange
+                      onChange: this.handleChange,
                     }}
                   />
                 </GridItem>
@@ -121,13 +125,13 @@ class ContactUs extends React.Component {
                     name="email"
                     type="email"
                     formControlProps={{
-                      fullWidth: true
+                      fullWidth: true,
                     }}
                     inputProps={{
                       type: "email",
                       value: this.state.email,
                       name: "email",
-                      onChange: this.handleChange
+                      onChange: this.handleChange,
                     }}
                   />
                 </GridItem>
@@ -138,7 +142,7 @@ class ContactUs extends React.Component {
                   type="text"
                   formControlProps={{
                     fullWidth: true,
-                    className: classes.textArea
+                    className: classes.textArea,
                   }}
                   inputProps={{
                     required: true,
@@ -146,15 +150,11 @@ class ContactUs extends React.Component {
                     rows: 5,
                     value: this.state.message,
                     name: "message",
-                    onChange: this.handleChange
+                    onChange: this.handleChange,
                   }}
                 />
                 <GridContainer>
-                  <GridItem
-                    xs={12}
-                    sm={12}
-                    md={7}
-                  >
+                  <GridItem xs={12} sm={12} md={7}>
                     <Recaptcha
                       sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
                       verifyCallback={this.verifyCallback}

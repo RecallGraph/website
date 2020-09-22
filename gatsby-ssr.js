@@ -1,6 +1,11 @@
 import React from "react"
+import { ServerStyleSheets } from "@material-ui/core/styles"
 
-export const onRenderBody = ({ setHeadComponents }) => {
+const sheets = new ServerStyleSheets()
+
+export const onRenderBody = ({ setHeadComponents}) => {
+  const css = sheets.toString()
+
   setHeadComponents([
     <script
       key="recaptcha"
@@ -9,5 +14,10 @@ export const onRenderBody = ({ setHeadComponents }) => {
       async
       defer
     />,
+    <style id="jss-server-side">${css}</style>,
   ])
+}
+
+export const wrapPageElement = ({ element}) => {
+  return sheets.collect(element)
 }

@@ -1,11 +1,11 @@
-import { title } from "../material-kit-react";
+import { title } from "../material-kit-react"
 
 const videoStyle = {
   section: {
     padding: "0 10px",
-    marginBottom:"70px",
-    backgroundColor:"#fafafa",
-    minHeight:'70vh',
+    marginBottom: "70px",
+    backgroundColor: "#fafafa",
+    minHeight: "70vh",
   },
   title: {
     ...title,
@@ -13,19 +13,19 @@ const videoStyle = {
     marginTop: "10px",
     minHeight: "12px",
     textDecoration: "none",
-    textAlign: "center"
+    textAlign: "center",
   },
   description: {
     color: "#999",
-    textAlign: "center"
+    textAlign: "center",
   },
   textCenter: {
-    textAlign: "center"
+    textAlign: "center",
   },
   textArea: {
     marginRight: "15px",
-    marginLeft: "15px"
-  }
-};
+    marginLeft: "15px",
+  },
+}
 
-export default videoStyle;
+export default videoStyle
