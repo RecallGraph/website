@@ -3,7 +3,7 @@ import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import withStyles from "@material-ui/core/styles/withStyles"
 import Tooltip from "@material-ui/core/Tooltip"
-import { Apps, Forum } from "@material-ui/icons"
+import { HelpOutline, Forum } from "@material-ui/icons"
 import React from "react"
 import { FaGithub } from "react-icons/fa"
 import headerLinksStyle from "../../styles/headerLinksStyle"
@@ -22,7 +22,7 @@ function HeaderLinks({ ...props }) {
             className: classes.navLink,
             color: "transparent",
           }}
-          buttonIcon={Apps}
+          buttonIcon={HelpOutline}
           dropdownList={[
             <a
               href="https://docs.recallgraph.tech/working-with-recallgraph/guide"

@@ -142,7 +142,7 @@ function SEO({ description, lang, image, meta, keywords, title, pathname }) {
         )
         .concat(meta)}
     >
-      {console.log(metaImage)}
+      {/*{console.log(metaImage)}*/}
     </Helmet>
   )
 }

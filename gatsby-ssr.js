@@ -1,9 +1,10 @@
 import React from "react"
 import { ServerStyleSheets } from "@material-ui/core/styles"
+import Layout from "./src/components/Layout"
 
 const sheets = new ServerStyleSheets()
 
-export const onRenderBody = ({ setHeadComponents}) => {
+export const onRenderBody = ({ setHeadComponents }) => {
   const css = sheets.toString()
 
   setHeadComponents([
@@ -14,10 +15,10 @@ export const onRenderBody = ({ setHeadComponents}) => {
       async
       defer
     />,
-    <style id="jss-server-side">${css}</style>,
+    <style id="jss-server-side">${css}</style>
   ])
 }
 
-export const wrapPageElement = ({ element}) => {
-  return sheets.collect(element)
+export const wrapPageElement = ({ element, props }) => {
+  return sheets.collect(<Layout {...props}>{element}</Layout>)
 }

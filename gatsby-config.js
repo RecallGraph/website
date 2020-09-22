@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env`,
+  path: `.env`
 })
 
 module.exports = {
@@ -7,28 +7,29 @@ module.exports = {
     title: `RecallGraph`,
     description: `A versioning data store for time-variant graph data.`,
     author: `@rkr-dev,`,
-    image: `https://i.imgur.com/nktgBWh.png`,
-    keywords: ["recallgraph", "graphdata"],
-    siteUrl: "https://github.com/RecallGraph",
+    image: `/static/Rg-1-trans.png`,
+    keywords: ["recallgraph", "temporal graphs", "dynamic networks", "data versioning", "streaming graph data",
+      "foxx microservice", "arangodb"],
+    siteUrl: "https://recallgraph.tech/",
     siteVerification: {
       google: "",
-      bing: "",
+      bing: ""
     },
     social: {
-      twitter: "@recallgraph",
+      twitter: "@recallgraph"
     },
     socialLinks: {
-      github: ``,
+      github: `https://github.com/RecallGraph/RecallGraph`,
       twitter: ``,
       facebook: ``,
       instagram: ``,
       linkedin: ``,
-      email: ``,
+      email: `info@recallgraph.tech`
     },
     organization: {
-      name: ``,
-      url: ``,
-    },
+      name: `RecallGraph`,
+      url: `https://github.com/RecallGraph`
+    }
   },
   plugins: [
     "gatsby-plugin-resolve-src",
@@ -40,8 +41,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/static`,
-      },
+        path: `${__dirname}/static`
+      }
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -51,7 +52,7 @@ module.exports = {
         // The property ID; the tracking code won't be generated without it
         trackingId: "UA-165340753-2",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
+        head: true,
         // Setting this parameter is optional
         anonymize: true,
         // Setting this parameter is also optional
@@ -67,12 +68,12 @@ module.exports = {
         // Set Variation ID. 0 for original 1,2,3....
         // variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
         // Defers execution of google analytics script after page load
-        defer: false,
+        defer: true,
         // Any additional optional fields
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: "recallgraph.tech",
-      },
+        cookieDomain: "recallgraph.tech"
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -83,8 +84,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/logo.png`, // This path is relative to the root of the site.
-      },
-    },
-  ],
+        icon: `static/logo.png` // This path is relative to the root of the site.
+      }
+    }
+  ]
 }
