@@ -11,7 +11,7 @@ class HeroSection extends React.Component {
     const { classes, image } = this.props
     const url = image.src
     return (
-      <Parallax>
+      <Parallax image={url}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={12}>

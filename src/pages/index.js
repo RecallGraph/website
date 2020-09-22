@@ -1,4 +1,4 @@
 import React from "react"
 import LandingPage from "../components/LandingPage"
 
-export default (props) => <LandingPage {...props} />
+export default (props) => <LandingPage {...props} key={"page"}/>

@@ -6,11 +6,11 @@ import GridItem from "../assets/material-kit/components/Grid/GridItem"
 import productStyle from "../assets/material-kit/views/productStyle"
 
 class UsefulLinks extends React.Component {
-  render() {
+  render () {
     const { classes } = this.props
     return (
       <div className={classes.section} style={{ backgroundColor: "#fafafa" }}>
-        <GridContainer justify="center">
+        <GridContainer justify="center" style={{ width: "100%" }}>
           <GridItem xs={12} sm={12} md={12}>
             <h2 className={classes.title}>Useful Links</h2>
             <Button
