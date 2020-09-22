@@ -38,10 +38,8 @@
     "react-icons": "^3.5.0",
     "react-recaptcha": "^2.3.10",
     "react-router-dom": "^4.3.1",
-    "react-slick": "^0.23.2",
     "react-swipeable-views": "^0.13.1",
     "react-tsparticles": "^1.17.10",
-    "slick-carousel": "^1.8.1",
     "typeface-roboto": "0.0.54",
     "typeface-roboto-slab": "0.0.72"
   },

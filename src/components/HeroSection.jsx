@@ -1,5 +1,6 @@
 import withStyles from "@material-ui/core/styles/withStyles"
 import React from "react"
+import Img from "gatsby-image"
 import Particles from "react-tsparticles"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
@@ -8,7 +9,8 @@ import landingPageStyle from "../assets/material-kit/views/landingPage"
 
 class HeroSection extends React.Component {
   render() {
-    const { classes } = this.props
+    const { classes,image } = this.props
+    const url = image.src;
     return (
       <Parallax>
         <div className={classes.container}>
@@ -21,7 +23,7 @@ class HeroSection extends React.Component {
                     color: {
                       value: "#2F4F4F"
                     },
-                    image: 'url("/Rg-1-trans.png")',
+                    image: `url(${url})`,
                     position: "50% 50%",
                     repeat: "no-repeat",
                     size: "contain",

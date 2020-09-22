@@ -32,7 +32,6 @@ class ContactUs extends React.Component {
 
   handleClose () {
     this.setState({
-      ...this.state,
       open: false
     })
   };
@@ -58,7 +57,7 @@ class ContactUs extends React.Component {
     const user_id = process.env.GATSBY_EMAILJS_USER_ID
     // const user_id = "user_M23qURHUeUhH8KoE6X7Nf"
     e.preventDefault()
-    this.setState({loading: true})
+    this.setState({ loading: true })
     if (this.state.verified) {
       init(user_id)
       emailjs
@@ -77,7 +76,11 @@ class ContactUs extends React.Component {
         })
     }
     else {
-      this.setState({ status: "Captcha not verified. Please select again.", open: true })
+      this.setState({
+        status: "Captcha not verified. Please select again.",
+        open: true,
+        loading: false
+      })
     }
   }
 
@@ -176,6 +179,7 @@ class ContactUs extends React.Component {
                       onClose={this.handleClose}
                       message={this.state.status}
                       TransitionComponent={this.state.Transition}
+                      autoHideDuration={3000}
                     />
                   </GridItem>
                 </GridContainer>
