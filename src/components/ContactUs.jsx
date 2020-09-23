@@ -155,10 +155,10 @@ class ContactUs extends React.Component {
                 />
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={7}>
-                    <Recaptcha
+                    {typeof window === 'undefined' ? null : <Recaptcha
                       sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
                       verifyCallback={this.verifyCallback}
-                    />
+                    />}
                   </GridItem>
                   <GridItem
                     xs={10}
