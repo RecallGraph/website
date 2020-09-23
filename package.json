@@ -53,5 +53,8 @@
   },
   "bugs": {
     "url": "https://github.com/RecallGraph/website/issues"
+  },
+  "dependencies": {
+    "react-share": "^4.3.0"
   }
 }

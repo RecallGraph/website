@@ -1,0 +1,27 @@
+.socialshare {
+    width: 250px;
+    position: absolute;
+    bottom: 10px;
+    top: 30px;
+    right: 40%;
+
+}
+
+.socialshare__network {
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.socialshare__button {
+    cursor: pointer;
+    border: none;
+}
+.socialshare__button:hover {
+    transform: scale(1.2);
+    transition: 0.3s all ease-in-out;
+}
+.socialshare__button:hover:not(:active)  {
+    opacity: 0.75;
+}

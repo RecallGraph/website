@@ -10,6 +10,8 @@ import HeroSection from "./HeroSection"
 import UsefulLinks from "./UsefulLinks"
 import WhatWeOffer from "./WhatWeOffer"
 import YoutubeVideo from "./YoutubeVideo"
+import {SocialSharing} from './SocialSharing'
+
 
 class LandingPage extends React.Component {
   render () {
@@ -54,6 +56,7 @@ class LandingPage extends React.Component {
           />
           <ContactUs />
         </div>
+        <SocialSharing />
       </div>
       <UsefulLinks key={"links"}/>
       <Footer key={"footer"}/>
