@@ -27,11 +27,9 @@ function SEO({ description, lang, image, meta, keywords, title, pathname }) {
       }
     `
   )
-
+  const current_URL = site.siteMetadata.siteUrl
   const metaDescription = description || site.siteMetadata.description
-  const metaImage =
-    image && image.src ? `${site.siteMetadata.siteUrl}${image.src}` : null
-  const metaUrl = `${site.siteMetadata.siteUrl}${pathname}`
+  const metaImage = image && image.src ? `${current_URL}${image.src}` : null
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
   return (
@@ -41,108 +39,29 @@ function SEO({ description, lang, image, meta, keywords, title, pathname }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      link={
-        canonical
-          ? [
-              {
-                rel: "canonical",
-                href: canonical,
-              },
-            ]
-          : []
-      }
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
-        },
-        {
-          name: `twitter:url`,
-          content: `${site.siteMetadata.siteUrl}`,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name: `twitter:image`,
-          content: `${site.siteMetadata.image}`,
-        },
-        {
-          name: `twitter:creator`,
-          content: `@${site.siteMetadata.social.twitter}`,
-        },
-        {
-          name: `twitter:site`,
-          content: `@${site.siteMetadata.social.twitter}`,
-        },
-        {
-          name: `twitter:image:alt`,
-          content: metaDescription,
-        },
-      ]
-        .concat(
-          metaImage
-            ? [
-                {
-                  property: `og:image`,
-                  content: metaImage,
-                },
-                {
-                  property: `og:image:alt`,
-                  content: title,
-                },
-                {
-                  property: "og:image:width",
-                  content: image.width,
-                },
-                {
-                  property: "og:image:height",
-                  content: image.height,
-                },
-                {
-                  name: `twitter:card`,
-                  content: `summary_large_image`,
-                },
-              ]
-            : [
-                {
-                  name: `twitter:card`,
-                  content: `summary`,
-                },
-              ]
-        )
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
+      link={ canonical ? [{rel: "canonical",href: canonical,},]: []}
+      meta={[{name: `description`,content: metaDescription,},
+             {property: `og:title`,content: title,},
+             {property: `og:description`,content: metaDescription,},
+             {property: `og:type`,content: `website`,},
+             {name: `twitter:card`,content: `summary_large_image`,},
+             {name: `twitter:url`,content: `${site.siteMetadata.siteUrl}`,},
+             {name: `twitter:title`,content: title,},
+             {name: `twitter:description`,content: metaDescription,},
+             {name: `twitter:image`,content: metaImage,},
+             {name: `twitter:creator`,content: `${site.siteMetadata.social.twitter}`,},
+             {name: `twitter:site`,content: `${site.siteMetadata.social.twitter}`,},
+             {name: `twitter:image:alt`,content: metaDescription,},]
+        .concat(metaImage ? [{property: `og:image`,content: metaImage,},
+                             {property: `og:image:alt`,content: title,},
+                             {property: "og:image:width",content: image.width,},
+                             {property: "og:image:height",content: image.height,},
+                             {name: `twitter:card`,content: `summary_large_image`,},
+                            ]
+                         :  [{name: `twitter:card`,content: `summary`,},])
+        .concat(keywords.length > 0 ? {name: `keywords`,content: keywords.join(`, `),}: [])
         .concat(meta)}
     >
-      {/*{console.log(metaImage)}*/}
     </Helmet>
   )
 }

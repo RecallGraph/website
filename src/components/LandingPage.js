@@ -3,16 +3,17 @@ import classNames from "classnames"
 import { graphql, StaticQuery } from "gatsby"
 import React from "react"
 import Footer from "../assets/material-kit/components/Footer/Footer"
-import landingPageStyle from "../assets/material-kit/views/landingPage"
+import landingPageStyle from "../assets/material-kit/views/landingPageStyle"
 import AboutUs from "./AboutUs"
 import ContactUs from "./ContactUs"
 import HeroSection from "./HeroSection"
+import { SocialSharing } from "./SocialSharing"
 import UsefulLinks from "./UsefulLinks"
 import WhatWeOffer from "./WhatWeOffer"
 import YoutubeVideo from "./YoutubeVideo"
 
 class LandingPage extends React.Component {
-  render () {
+  render() {
     const { classes } = this.props
 
     return <>
@@ -34,7 +35,10 @@ class LandingPage extends React.Component {
         key={"hero"}
       />
 
-      <div className={classNames(classes.main, classes.mainRaised)} key={"main"}>
+      <div
+        className={classNames(classes.main, classes.mainRaised)}
+        key={"main"}
+      >
         <div className={classes.container}>
           <WhatWeOffer />
           <AboutUs />
@@ -54,9 +58,10 @@ class LandingPage extends React.Component {
           />
           <ContactUs />
         </div>
+        <SocialSharing/>
       </div>
-      <UsefulLinks key={"links"}/>
-      <Footer key={"footer"}/>
+      <UsefulLinks key={"links"} />
+      <Footer key={"footer"} />
     </>
   }
 }

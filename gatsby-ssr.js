@@ -15,14 +15,14 @@ export const onRenderBody = ({ setHeadComponents }) => {
       async
       defer
     />,
-    <style id={"static-inline"}>
+    <style id={"static-inline"} key={"static"}>
       {`
         body {
           margin: 0
         }
       `}
     </style>,
-    <style id="jss-server-side">{css}</style>
+    <style id="jss-server-side" key={"jss"}>{css}</style>
   ])
 }
 
