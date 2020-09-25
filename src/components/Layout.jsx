@@ -16,7 +16,7 @@ class Layout extends React.Component {
     return <>
       <SEO
         title="RecallGraph - A versioning data store for time-variant graph data."
-        image={{src:image,height:500,width:500}}
+        image={{src:image,height:627,width:1200}}
         key={"seo"}
       />
       <Header
