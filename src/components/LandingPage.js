@@ -20,7 +20,7 @@ class LandingPage extends React.Component {
       <StaticQuery
         query={graphql`
           {
-            allFile(filter: { name: { eq: "Rg-1-trans" } }) {
+            allFile(filter: { name: { eq: "Rg-1-bg" } }) {
               nodes {
                 childImageSharp {
                   fluid {

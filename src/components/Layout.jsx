@@ -1,5 +1,5 @@
 import React from "react"
-import image from "../../static/Rg-2-trans.png"
+import image from "../../static/Rg-1-bg.jpg"
 import Header from "../assets/material-kit/components/Header/Header"
 import HeaderLinks from "../assets/material-kit/components/Header/HeaderLinks"
 import SEO from "./SEO"
