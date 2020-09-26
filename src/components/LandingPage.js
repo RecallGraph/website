@@ -40,6 +40,7 @@ class LandingPage extends React.Component {
         key={"main"}
       >
         <div className={classes.container}>
+          <SocialSharing/>
           <WhatWeOffer />
           <AboutUs />
           <YoutubeVideo
@@ -58,7 +59,6 @@ class LandingPage extends React.Component {
           />
           <ContactUs />
         </div>
-        <SocialSharing/>
       </div>
       <UsefulLinks key={"links"} />
       <Footer key={"footer"} />
