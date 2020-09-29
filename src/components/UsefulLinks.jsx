@@ -3,7 +3,7 @@ import React from "react"
 import Button from "../assets/material-kit/components/CustomButtons/Button.jsx"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
-import productStyle from "../assets/material-kit/views/productStyle"
+import productStyle from "../assets/material-kit/styles/productStyle"
 
 class UsefulLinks extends React.Component {
   render () {

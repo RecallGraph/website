@@ -27,7 +27,7 @@ export const SocialSharing = () => {
         xs={12}
         sm={12}
         md={8}
-        style={{ "text-align": "center", "margin-top": "30px" }}
+        style={{ "textAlign": "center", "marginTop": "30px" }}
       >
         <div className="socialshare">
           <div className="socialshare__network">

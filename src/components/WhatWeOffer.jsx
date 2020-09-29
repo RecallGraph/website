@@ -1,5 +1,4 @@
 import withStyles from "@material-ui/core/styles/withStyles"
-
 import {
   LineWeight,
   BarChart,
@@ -12,7 +11,7 @@ import React from "react"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
 import InfoArea from "../assets/material-kit/components/InfoArea/InfoArea"
-import productStyle from "../assets/material-kit/views/productStyle"
+import productStyle from "../assets/material-kit/styles/productStyle"
 
 class WhatWeOffer extends React.Component {
   render() {

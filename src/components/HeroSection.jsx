@@ -4,7 +4,7 @@ import Particles from "react-tsparticles"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
 import Parallax from "../assets/material-kit/components/Parallax/Parallax"
-import landingPageStyle from "../assets/material-kit/views/landingPageStyle"
+import landingPageStyle from "../assets/material-kit/styles/landingPageStyle"
 
 class HeroSection extends React.Component {
   render() {
