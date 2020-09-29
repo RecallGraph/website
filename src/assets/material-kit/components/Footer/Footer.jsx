@@ -29,7 +29,7 @@ function Footer({ ...props }) {
                 className={classes.block}
                 target="_blank"
               >
-                RecallGraph
+                Project Home
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>

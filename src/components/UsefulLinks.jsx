@@ -45,14 +45,6 @@ class UsefulLinks extends React.Component {
             >
               Downloads
             </Button>
-            <Button
-              href="https://trello.com/b/AGrGVmb8/recallgraph"
-              color="info"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Project Tracker
-            </Button>
           </GridItem>
         </GridContainer>
       </div>

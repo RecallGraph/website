@@ -14,7 +14,7 @@ class HeroSection extends React.Component {
       <Parallax image={url}>
         <div className={classes.container}>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={12}>
+            <GridItem xs={12}>
               <Particles
                 id="tsparticles"
                 options={{
