@@ -2,10 +2,8 @@ import React from "react"
 import withStyles from "@material-ui/core/styles/withStyles"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
-// import CustomInput from "../assets/material-kit/components/CustomInput/CustomInput.jsx";
-// import Button from "../assets/material-kit/components/CustomButtons/Button.jsx";
 
-import videoStyle from "../assets/material-kit/views/videoStyle"
+import videoStyle from "../assets/material-kit/styles/videoStyle"
 
 class YoutubeVideo extends React.Component {
   render() {

@@ -4,7 +4,7 @@ import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
 import Button from "../assets/material-kit/components/CustomButtons/Button"
 
-import productStyle from "../assets/material-kit/views/productStyle"
+import productStyle from "../assets/material-kit/styles/productStyle"
 
 class AboutUs extends React.Component {
   render() {

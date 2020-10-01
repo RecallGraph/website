@@ -4,7 +4,7 @@ import Particles from "react-tsparticles"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
 import Parallax from "../assets/material-kit/components/Parallax/Parallax"
-import landingPageStyle from "../assets/material-kit/views/landingPageStyle"
+import landingPageStyle from "../assets/material-kit/styles/landingPageStyle"
 
 class HeroSection extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class HeroSection extends React.Component {
       <Parallax image={url}>
         <div className={classes.container}>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={12}>
+            <GridItem xs={12}>
               <Particles
                 id="tsparticles"
                 options={{

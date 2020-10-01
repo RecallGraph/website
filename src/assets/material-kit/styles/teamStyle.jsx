@@ -1,5 +1,5 @@
 import { cardTitle, title } from "../material-kit-react"
-import imagesStyle from "../styles/imagesStyles"
+import imagesStyles from "./imagesStyles"
 
 const teamStyle = {
   section: {
@@ -13,7 +13,7 @@ const teamStyle = {
     minHeight: "32px",
     textDecoration: "none",
   },
-  ...imagesStyle,
+  ...imagesStyles,
   itemGrid: {
     marginLeft: "auto",
     marginRight: "auto",

@@ -6,10 +6,10 @@ import {
   FacebookShareButton,
   LinkedinIcon,
   LinkedinShareButton,
-  PinterestIcon,
-  PinterestShareButton,
+  EmailIcon,
+  EmailShareButton,
   TwitterIcon,
-  TwitterShareButton,
+  TwitterShareButton
 } from "react-share"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
@@ -27,7 +27,7 @@ export const SocialSharing = () => {
         xs={12}
         sm={12}
         md={8}
-        style={{ "text-align": "center", "margin-top": "30px" }}
+        style={{ "textAlign": "center", "marginTop": "30px" }}
       >
         <div className="socialshare">
           <div className="socialshare__network">
@@ -54,12 +54,12 @@ export const SocialSharing = () => {
             </LinkedinShareButton>
           </div>
           <div className="socialshare__network">
-            <PinterestShareButton
+            <EmailShareButton
               url={shareUrl}
               className="socialshare__button"
             >
-              <PinterestIcon size={32} round />
-            </PinterestShareButton>
+              <EmailIcon size={32} round />
+            </EmailShareButton>
           </div>
         </div>
       </GridItem>
