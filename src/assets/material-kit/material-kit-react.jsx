@@ -45,6 +45,9 @@ const container = {
   "@media (min-width: 1200px)": {
     maxWidth: "1140px",
   },
+  "@media (min-width: 1824px)": {
+    maxWidth: "1640px",
+  },
 }
 
 const boxShadow = {
@@ -75,7 +78,7 @@ const dangerColor = "#f44336"
 const successColor = "#4caf50"
 const infoColor = "#00acc1"
 const roseColor = "#e91e63"
-const grayColor = "#999999"
+const grayColor = "#888888"
 
 const primaryBoxShadow = {
   boxShadow:

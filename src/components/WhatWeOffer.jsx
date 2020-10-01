@@ -19,7 +19,7 @@ class WhatWeOffer extends React.Component {
     return (
       <div className={classes.section}>
         <GridContainer justify="center">
-          <GridItem xs={12} sm={12} md={8} lg={12}>
+          <GridItem xs={12} sm={12} md={8}>
             <h2 className={classes.title}>
               A versioning data store for time-variant graph data.
             </h2>
