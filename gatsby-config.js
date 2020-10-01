@@ -7,7 +7,7 @@ module.exports = {
     title: `RecallGraph`,
     description: `A versioning data store for time-variant graph data.`,
     author: `@rkr-dev,`,
-    image: `static/Rg-1-trans.png`,
+    image: `static/Rg-1-bg.jpg`,
     keywords: ["recallgraph", "temporal graphs", "dynamic networks", "data versioning", "streaming graph data",
       "foxx microservice", "arangodb"],
     siteUrl: "https://recallgraph.tech/",

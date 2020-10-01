@@ -20,17 +20,17 @@ class WhatWeOffer extends React.Component {
     return (
       <div className={classes.section}>
         <GridContainer justify="center">
-          <GridItem xs={12} sm={12} md={8}>
+          <GridItem xs={12} sm={12} md={8} lg={12}>
             <h2 className={classes.title}>
               A versioning data store for time-variant graph data.
             </h2>
             <h4 className={classes.description}>
-              <p align="left">
+              <p >
                 RecallGraph is a versioned-graph data store - it retains all
                 changes that its data (vertices and edges) have gone through to
                 reach their current state.
               </p>
-              <p align="left">
+              <p>
                 It supports point-in-time graph traversals, letting the user
                 query any past state of the graph just as easily as the present.
               </p>
@@ -39,7 +39,7 @@ class WhatWeOffer extends React.Component {
         </GridContainer>
         <div>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={4}>
+            <GridItem xs={12} sm={12} md={4} >
               <InfoArea
                 title="ACID Transactions"
                 description="All write operations are wrapped in ACID-compliant transactions, so your data is

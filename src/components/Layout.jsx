@@ -1,5 +1,5 @@
 import React from "react"
-import image from "../../static/Rg-2-trans.png"
+import image from "../../static/Rg-1-bg.jpg"
 import Header from "../assets/material-kit/components/Header/Header"
 import HeaderLinks from "../assets/material-kit/components/Header/HeaderLinks"
 import SEO from "./SEO"
@@ -16,7 +16,7 @@ class Layout extends React.Component {
     return <>
       <SEO
         title="RecallGraph - A versioning data store for time-variant graph data."
-        image={{src:image,height:500,width:500}}
+        image={{src:image,height:627,width:1200}}
         key={"seo"}
       />
       <Header
