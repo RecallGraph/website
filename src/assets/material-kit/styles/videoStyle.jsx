@@ -4,8 +4,7 @@ const videoStyle = {
   section: {
     padding: "0 10px",
     marginBottom: "30px",
-    backgroundColor: "#fafafa",
-    minHeight: "70vh",
+    backgroundColor: "#fafafa"
   },
   title: {
     ...title,

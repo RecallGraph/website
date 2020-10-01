@@ -1,4 +1,4 @@
-import { title } from "../material-kit-react"
+import { title, grayColor } from "../material-kit-react"
 
 const productStyle = {
   section: {
@@ -13,8 +13,10 @@ const productStyle = {
     textDecoration: "none",
   },
   description: {
-    color: "#999",
-  },
+    color: grayColor,
+    textAlign:"left",
+    fontSize:"1.1rem"
+  }
 }
 
 export default productStyle
