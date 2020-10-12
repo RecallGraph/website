@@ -25,15 +25,6 @@ function Footer({ ...props }) {
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://github.com/RecallGraph/RecallGraph"
-                className={classes.block}
-                target="_blank"
-              >
-                Project Home
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
                 href="https://adityamukho.com/tag/historical-graphs/"
                 className={classes.block}
                 target="_blank"
@@ -43,11 +34,29 @@ function Footer({ ...props }) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://github.com/RecallGraph/RecallGraph/blob/development/LICENSE"
+                href="https://recallgraph.loopinput.com/5f83e431823e4d00170bf0bd"
                 className={classes.block}
                 target="_blank"
               >
-                License
+                Feedback
+              </a>
+            </ListItem>
+            <ListItem className={classes.inlineBlock}>
+              <a
+                href="https://www.termsfeed.com/live/e3f4aeec-1e62-4c27-9682-f6cf06adc647"
+                className={classes.block}
+                target="_blank"
+              >
+                Disclaimer
+              </a>
+            </ListItem>
+            <ListItem className={classes.inlineBlock}>
+              <a
+                href="https://www.termsfeed.com/live/1a357325-8f3e-4b1b-b913-217f1cadb42a"
+                className={classes.block}
+                target="_blank"
+              >
+                Cookies Policy
               </a>
             </ListItem>
           </List>
