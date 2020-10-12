@@ -14,20 +14,12 @@ class UsefulLinks extends React.Component {
           <GridItem xs={12} sm={12} md={12}>
             <h2 className={classes.title}>Useful Links</h2>
             <Button
-              href="https://github.com/RecallGraph/RecallGraph"
+              href="https://github.com/RecallGraph/RecallGraph/releases"
               color="info"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Source
-            </Button>
-            <Button
-              href="https://gitter.im/RecallGraph/community"
-              color="info"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Community
+              Downloads
             </Button>
             <Button
               href="https://docs.recallgraph.tech/"
@@ -38,12 +30,20 @@ class UsefulLinks extends React.Component {
               Docs
             </Button>
             <Button
-              href="https://github.com/RecallGraph/RecallGraph/releases"
+              href="https://gitter.im/RecallGraph/community"
               color="info"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Downloads
+              Community
+            </Button>
+            <Button
+              href="https://github.com/RecallGraph/RecallGraph"
+              color="info"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source
             </Button>
           </GridItem>
         </GridContainer>
