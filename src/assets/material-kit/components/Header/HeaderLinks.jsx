@@ -70,6 +70,9 @@ function HeaderLinks ({ ...props }) {
           <FaGithub />
         </Button>
       </ListItem>
+      <ListItem className={classes.listItem}>
+        <div data-netlify-identity-menu={'true'}/>
+      </ListItem>
     </List>
   )
 }
