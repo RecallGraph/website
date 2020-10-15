@@ -1,4 +1,5 @@
 import React from "react"
+import Footer from "../assets/material-kit/components/Footer/Footer"
 import image from "../../static/Rg-1-bg.jpg"
 import Header from "../assets/material-kit/components/Header/Header"
 import HeaderLinks from "../assets/material-kit/components/Header/HeaderLinks"
@@ -26,13 +27,14 @@ class Layout extends React.Component {
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
-          height: 400,
+          height: 320,
           color: "white",
         }}
         key={"header"}
         {...rest}
       />
       {children}
+      <Footer key={"footer"} />
     </>
   }
 }

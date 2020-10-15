@@ -8,10 +8,10 @@ import landingPageStyle from "../assets/material-kit/styles/landingPageStyle"
 
 class HeroSection extends React.Component {
   render() {
-    const { classes, image } = this.props
+    const { classes, image, small } = this.props
     const url = image.src
     return (
-      <Parallax image={url}>
+      <Parallax small={small} image={url}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12}>
