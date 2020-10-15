@@ -72,7 +72,7 @@ class AppSumoForm extends React.Component {
             name: "",
             email: "",
             password: "",
-            code: ""
+            code: "",
           })
         })
         .catch(() =>
