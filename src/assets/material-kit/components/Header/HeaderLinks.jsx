@@ -71,7 +71,7 @@ function HeaderLinks ({ ...props }) {
         </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <div data-netlify-identity-menu={'true'}/>
+        <div data-netlify-identity-menu></div>
       </ListItem>
     </List>
   )
