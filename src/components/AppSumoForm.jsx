@@ -105,7 +105,7 @@ class AppSumoForm extends React.Component {
             <h4 className={classes.description}>
               Get free lifetime access to upcoming premium features!
             </h4>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} name={"register-appsumo"} data-netlify={'true'}>
               <GridContainer>
                 <GridItem xs={12}>
                   <CustomInput
