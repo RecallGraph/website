@@ -1,5 +1,5 @@
-import React from "react"
 import { ServerStyleSheets } from "@material-ui/core/styles"
+import React from "react"
 import Layout from "./src/components/Layout"
 
 const sheets = new ServerStyleSheets()

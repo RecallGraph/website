@@ -20,7 +20,7 @@ const parallaxStyle = {
     },
     "&:after,&:before": {
       position: "absolute",
-      zIndex: "1",
+      // zIndex: "1",
       width: "100%",
       height: "100%",
       display: "block",

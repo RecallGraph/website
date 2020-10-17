@@ -1,4 +1,3 @@
-/*eslint-disable*/
 import React from "react"
 // nodejs library to set properties for components
 import PropTypes from "prop-types"
@@ -28,6 +27,7 @@ function Footer({ ...props }) {
                 href="https://adityamukho.com/tag/historical-graphs/"
                 className={classes.block}
                 target="_blank"
+                rel={"noreferrer"}
               >
                 Blog
               </a>
@@ -37,6 +37,7 @@ function Footer({ ...props }) {
                 href="https://recallgraph.loopinput.com/5f83e431823e4d00170bf0bd"
                 className={classes.block}
                 target="_blank"
+                rel={"noreferrer"}
               >
                 Feedback
               </a>
@@ -46,6 +47,7 @@ function Footer({ ...props }) {
                 href="https://www.termsfeed.com/live/e3f4aeec-1e62-4c27-9682-f6cf06adc647"
                 className={classes.block}
                 target="_blank"
+                rel={"noreferrer"}
               >
                 Disclaimer
               </a>
@@ -55,6 +57,7 @@ function Footer({ ...props }) {
                 href="https://www.termsfeed.com/live/1a357325-8f3e-4b1b-b913-217f1cadb42a"
                 className={classes.block}
                 target="_blank"
+                rel={"noreferrer"}
               >
                 Cookies Policy
               </a>
@@ -67,6 +70,7 @@ function Footer({ ...props }) {
             href="https://github.com/RecallGraph"
             className={aClasses}
             target="_blank"
+            rel={"noreferrer"}
           >
             RecallGraph
           </a>
