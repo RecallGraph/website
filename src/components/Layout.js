@@ -1,39 +1,65 @@
-import React from "react"
-import Footer from "../assets/material-kit/components/Footer/Footer"
+import { graphql, StaticQuery } from "gatsby"
+import React, { Children, cloneElement } from "react"
+import { IdentityContextProvider } from "react-netlify-identity-widget"
+import { Home } from "@material-ui/icons";
 import image from "../../static/Rg-1-bg.jpg"
+import Footer from "../assets/material-kit/components/Footer/Footer"
 import Header from "../assets/material-kit/components/Header/Header"
 import HeaderLinks from "../assets/material-kit/components/Header/HeaderLinks"
+import HeroSection from "./HeroSection"
 import SEO from "./SEO"
-import { IdentityContextProvider } from 'react-netlify-identity-widget'
+import UsefulLinks from "./UsefulLinks"
 
 import "typeface-roboto"
 import "typeface-roboto-slab"
 
-const url = 'https://recallgraph.tech/'
+const url = "https://recallgraph.tech/"
 
 class Layout extends React.Component {
-  render() {
-    const { classes, children, ...rest } = this.props
+  render () {
+    const { children, location, ...rest } = this.props
+    const isLandingPage = location.pathname === '/'
+    const elements = Children.toArray(children).map(el => cloneElement(el, { location }))
 
     return <IdentityContextProvider url={url}>
       <SEO
         title="RecallGraph - A versioning data store for time-variant graph data."
-        image={{src:image,height:627,width:1200}}
+        image={{ src: image, height: 627, width: 1200 }}
         key={"seo"}
       />
       <Header
         color="transparent"
-        brand="RecallGraph"
+        brand={<Home />}
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
-          height: 320,
+          height: isLandingPage ? 400 : 200,
           color: "white",
         }}
         key={"header"}
         {...rest}
       />
-      {children}
+      <StaticQuery
+        query={graphql`
+            {
+              allFile(filter: { name: { eq: "Rg-1-trans" } }) {
+                nodes {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+          `}
+        render={data => (
+          <HeroSection image={data.allFile.nodes[0].childImageSharp.fluid} small={!isLandingPage} />
+        )}
+        key={"hero"}
+      />
+      {elements}
+      <UsefulLinks key={"links"} />
       <Footer key={"footer"} />
     </IdentityContextProvider>
   }

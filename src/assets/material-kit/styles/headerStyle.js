@@ -59,7 +59,7 @@ const headerStyle = {
     textTransform: "none",
     color: "inherit",
     padding: "8px 16px",
-    "&:hover,&:focus": {
+    "&:hover,&:focus,&:visited": {
       color: "inherit",
       background: "transparent",
     },
@@ -145,6 +145,21 @@ const headerStyle = {
     paddingRight: "0px",
     paddingLeft: "0",
     ...transition,
+  },
+  navLink: {
+    color: "inherit",
+    position: "relative",
+    padding: "0.9375rem",
+    fontWeight: "400",
+    fontSize: "18px",
+    borderRadius: "3px",
+    lineHeight: "30px",
+    margin: "0px",
+    display: "inline-flex",
+    "&:hover,&:focus,&:visited": {
+      color: "inherit",
+      background: "rgba(200, 200, 200, 0.2)",
+    }
   },
 }
 

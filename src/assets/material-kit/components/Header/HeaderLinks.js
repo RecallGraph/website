@@ -1,9 +1,9 @@
+import { Link } from "gatsby"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import withStyles from "@material-ui/core/styles/withStyles"
-import { Forum, GetApp, HelpOutline } from "@material-ui/icons"
+import { GetApp, HelpOutline, LocalOffer, Notes, Subject } from "@material-ui/icons"
 import React from "react"
-import { FaGithub } from "react-icons/fa"
 import "react-netlify-identity-widget/styles.css"
 import headerLinksStyle from "../../styles/headerLinksStyle"
 import Button from "../CustomButtons/Button"
@@ -42,7 +42,7 @@ function HeaderLinks(props) {
               rel={"noreferrer"}
               className={classes.dropdownLink}
             >
-              Introduction
+              <Notes className={classes.icons} /> Introduction
             </a>,
             <a
               href="https://docs.recallgraph.tech/working-with-recallgraph/guide"
@@ -50,32 +50,13 @@ function HeaderLinks(props) {
               rel={"noreferrer"}
               className={classes.dropdownLink}
             >
-              Guide
+              <Subject className={classes.icons} /> Guide
             </a>,
           ]}
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Button
-          href="https://gitter.im/RecallGraph/community"
-          color="transparent"
-          target="_blank"
-          rel={"noreferrer"}
-          className={classes.navLink}
-        >
-          <Forum className={classes.icons} /> Community
-        </Button>
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          href="https://github.com/RecallGraph/RecallGraph"
-          target="_blank"
-          rel={"noreferrer"}
-          color="transparent"
-          className={classes.navLink}
-        >
-          <FaGithub /> Source
-        </Button>
+        <Link to={"/pricing"} className={classes.navLink}><LocalOffer className={classes.icons}/> Pricing</Link>
       </ListItem>
       <AccountLink {...props}/>
     </List>

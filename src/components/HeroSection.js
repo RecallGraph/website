@@ -10,9 +10,10 @@ class HeroSection extends React.Component {
   render() {
     const { classes, image, small } = this.props
     const url = image.src
+
     return (
       <Parallax small={small} image={url}>
-        <div className={classes.container}>
+        {small ? null : <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12}>
               <Particles
@@ -25,7 +26,7 @@ class HeroSection extends React.Component {
                     image: `url(${url})`,
                     position: "50% 50%",
                     repeat: "no-repeat",
-                    size: "contain",
+                    size: "50vw",
                     opacity: 1,
                   },
                   fpsLimit: 30,
@@ -107,7 +108,7 @@ class HeroSection extends React.Component {
               />
             </GridItem>
           </GridContainer>
-        </div>
+        </div>}
       </Parallax>
     )
   }
