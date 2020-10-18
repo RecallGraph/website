@@ -1,6 +1,6 @@
 import withStyles from "@material-ui/core/styles/withStyles"
 import React from "react"
-import Button from "../assets/material-kit/components/CustomButtons/Button.jsx"
+import Button from "../assets/material-kit/components/CustomButtons/Button"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
 import productStyle from "../assets/material-kit/styles/productStyle"

@@ -2,22 +2,16 @@ import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import withStyles from "@material-ui/core/styles/withStyles"
 import { Forum, GetApp, HelpOutline } from "@material-ui/icons"
-import React, { useState } from "react"
-import { FaGithub, FaSignInAlt, FaSignOutAlt } from "react-icons/fa"
-import IdentityModal, {
-  useIdentityContext,
-} from "react-netlify-identity-widget"
+import React from "react"
+import { FaGithub } from "react-icons/fa"
 import "react-netlify-identity-widget/styles.css"
 import headerLinksStyle from "../../styles/headerLinksStyle"
 import Button from "../CustomButtons/Button"
 import CustomDropdown from "../CustomDropdown/CustomDropdown"
+import AccountLink from "../../../../components/AccountLink";
 
 function HeaderLinks(props) {
   const { classes } = props
-  const identity = useIdentityContext()
-  const [dialog, setDialog] = useState(false)
-  const isLoggedIn = identity && identity.isLoggedIn
-  console.log({identity, isLoggedIn})
 
   return (
     <List className={classes.list}>
@@ -80,22 +74,10 @@ function HeaderLinks(props) {
           color="transparent"
           className={classes.navLink}
         >
-          <FaGithub />
+          <FaGithub /> Source
         </Button>
       </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          className={classes.navLink}
-          color="transparent"
-          onClick={() => setDialog(true)}
-        >
-          {isLoggedIn ? <FaSignOutAlt /> : <FaSignInAlt />}
-        </Button>
-        <IdentityModal
-          showDialog={dialog}
-          onCloseDialog={() => setDialog(false)}
-        />
-      </ListItem>
+      <AccountLink {...props}/>
     </List>
   )
 }

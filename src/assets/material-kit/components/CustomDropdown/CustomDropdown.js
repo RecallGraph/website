@@ -71,8 +71,8 @@ class CustomDropdown extends React.Component {
     })
     let icon
     switch (typeof buttonIcon) {
-      case "function":
       case "object":
+      case "function":
         icon = <this.props.buttonIcon className={classes.buttonIcon} />
         break
       case "string":
