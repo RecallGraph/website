@@ -33,7 +33,7 @@ class Layout extends React.Component {
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
-          height: isLandingPage ? 400 : 200,
+          height: isLandingPage ? 400 : 150,
           color: "white",
         }}
         key={"header"}

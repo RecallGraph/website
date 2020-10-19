@@ -30,7 +30,8 @@ const parallaxStyle = {
     },
   },
   small: {
-    height: "380px",
+    height: "50vh",
+    backgroundSize: "30vw",
   },
 }
 
