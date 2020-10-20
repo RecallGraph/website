@@ -1,7 +1,6 @@
 import { graphql, StaticQuery } from "gatsby"
 import React, { Children, cloneElement } from "react"
 import { IdentityContextProvider } from "react-netlify-identity-widget"
-import { Home } from "@material-ui/icons";
 import image from "../../static/Rg-1-bg.jpg"
 import Footer from "../assets/material-kit/components/Footer/Footer"
 import Header from "../assets/material-kit/components/Header/Header"
@@ -29,7 +28,7 @@ class Layout extends React.Component {
       />
       <Header
         color="transparent"
-        brand={<Home />}
+        brand="RecallGraph"
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{

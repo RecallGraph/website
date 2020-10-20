@@ -1,14 +1,14 @@
-import { Link } from "gatsby"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import withStyles from "@material-ui/core/styles/withStyles"
-import { GetApp, HelpOutline, LocalOffer, Notes, Subject } from "@material-ui/icons"
+import { Event, GetApp, HelpOutline, Notes, Subject } from "@material-ui/icons"
+import { Link } from "gatsby"
 import React from "react"
 import "react-netlify-identity-widget/styles.css"
+import AccountLink from "../../../../components/AccountLink"
 import headerLinksStyle from "../../styles/headerLinksStyle"
 import Button from "../CustomButtons/Button"
 import CustomDropdown from "../CustomDropdown/CustomDropdown"
-import AccountLink from "../../../../components/AccountLink";
 
 function HeaderLinks(props) {
   const { classes } = props
@@ -20,7 +20,7 @@ function HeaderLinks(props) {
           href="https://github.com/RecallGraph/RecallGraph/releases"
           color="transparent"
           target="_blank"
-          rel={"noreferrer"}
+          rel={"noopener noreferrer"}
           className={classes.navLink}
         >
           <GetApp className={classes.icons} /> Downloads
@@ -39,7 +39,7 @@ function HeaderLinks(props) {
             <a
               href="https://docs.recallgraph.tech/"
               target="_blank"
-              rel={"noreferrer"}
+              rel={"noopener noreferrer"}
               className={classes.dropdownLink}
             >
               <Notes className={classes.icons} /> Introduction
@@ -47,7 +47,7 @@ function HeaderLinks(props) {
             <a
               href="https://docs.recallgraph.tech/working-with-recallgraph/guide"
               target="_blank"
-              rel={"noreferrer"}
+              rel={"noopener noreferrer"}
               className={classes.dropdownLink}
             >
               <Subject className={classes.icons} /> Guide
@@ -56,9 +56,11 @@ function HeaderLinks(props) {
         />
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Link to={"/pricing"} className={classes.navLink}><LocalOffer className={classes.icons}/> Pricing</Link>
+        <Link to={"/schedule"} className={classes.navLink}>
+          <Event className={classes.icons} /> Schedule a Call
+        </Link>
       </ListItem>
-      <AccountLink {...props}/>
+      <AccountLink {...props} />
     </List>
   )
 }
