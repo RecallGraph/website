@@ -10,18 +10,31 @@ import Button from "../assets/material-kit/components/CustomButtons/Button"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer.js"
 import GridItem from "../assets/material-kit/components/Grid/GridItem.js"
 import landingPageStyle from "../assets/material-kit/styles/landingPageStyle"
+import { useIdentityContext } from "react-netlify-identity-widget"
 
 const useStyles = makeStyles(landingPageStyle)
 
-function show (service) {
-  if (window.appointlet) {
-    const schedule = window.appointlet({ organization: 'recallgraph', service, bookable: 136876 })
-    schedule.show()
-  }
-}
-
 export default function ProfilePage () {
   const classes = useStyles()
+  const identity = useIdentityContext()
+
+  function show (service) {
+    if (window.appointlet) {
+      const opts = { organization: 'recallgraph', service, bookable: 136876 }
+
+      if (identity && identity.isLoggedIn) {
+        const user = identity.user
+
+        opts.email = user.email
+        opts.fields = {
+          name: user.user_metadata.full_name
+        }
+      }
+
+      const schedule = window.appointlet(opts)
+      schedule.show()
+    }
+  }
 
   return (
     <div className={classNames(classes.main, classes.mainRaised)} key={"main"}>
