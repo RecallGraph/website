@@ -1,15 +1,13 @@
+import { CircularProgress, Fade, Snackbar } from "@material-ui/core"
 import withStyles from "@material-ui/core/styles/withStyles"
 import emailjs, { init } from "emailjs-com"
 import React from "react"
+import Recaptcha from "react-recaptcha"
 import Button from "../assets/material-kit/components/CustomButtons/Button"
 import CustomInput from "../assets/material-kit/components/CustomInput/CustomInput"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer"
 import GridItem from "../assets/material-kit/components/Grid/GridItem"
 import workStyle from "../assets/material-kit/styles/workStyle"
-import Recaptcha from "react-recaptcha"
-import Snackbar from "@material-ui/core/Snackbar"
-import Fade from "@material-ui/core/Fade"
-import CircularProgress from "@material-ui/core/CircularProgress"
 
 class ContactUs extends React.Component {
   constructor(props) {
@@ -148,10 +146,12 @@ class ContactUs extends React.Component {
                 />
                 <GridContainer>
                   <GridItem xs={12} sm={12} md={7}>
-                    {typeof window === 'undefined' ? null : <Recaptcha
-                      sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
-                      verifyCallback={this.verifyCallback}
-                    />}
+                    {typeof window === "undefined" ? null : (
+                      <Recaptcha
+                        sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
+                        verifyCallback={this.verifyCallback}
+                      />
+                    )}
                   </GridItem>
                   <GridItem
                     xs={10}

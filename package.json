@@ -59,5 +59,8 @@
   },
   "bugs": {
     "url": "https://github.com/RecallGraph/website/issues"
+  },
+  "dependencies": {
+    "mongodb": "^3.6.2"
   }
 }

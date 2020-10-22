@@ -14,7 +14,7 @@ import { useIdentityContext } from "react-netlify-identity-widget"
 
 const useStyles = makeStyles(landingPageStyle)
 
-export default function ProfilePage () {
+export default function SchedulePage () {
   const classes = useStyles()
   const identity = useIdentityContext()
 
@@ -76,7 +76,7 @@ export default function ProfilePage () {
                 </h1>
               </CardHeader>
               <CardBody>
-                <h2>$149</h2>
+                <h2>$59</h2>
                 <h3>
                   A dedicated, 1-1 call to discuss anything RecallGraph-related in depth.
                 </h3>
@@ -96,7 +96,7 @@ export default function ProfilePage () {
             <Card style={{ height: "90%" }}>
               <CardHeader color={'info'}><h2>2 Hour Exploratory Session</h2></CardHeader>
               <CardBody>
-                <h3>$249</h3>
+                <h3>$99</h3>
                 <h4>For any discussion that doesn't fit into a 1 hour window.</h4>
               </CardBody>
               <CardFooter>
