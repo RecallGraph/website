@@ -2,12 +2,8 @@ const { MongoClient } = require("mongodb")
 
 const { MONGO_DOMAIN, MONGO_DB, MONGO_USER, MONGO_PASSWORD } = process.env
 const uri = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_DOMAIN}/${MONGO_DB}?retryWrites=true&w=majority&poolSize=1`
-const client = new MongoClient(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
 
-async function getCollection(collName = "appsumo_codes") {
+async function getCollection(client, collName = "appsumo_codes") {
   await client.connect()
   const db = await client.db(MONGO_DB)
 
@@ -15,6 +11,10 @@ async function getCollection(collName = "appsumo_codes") {
 }
 
 exports.handler = async function (event, context) {
+  const client = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   const params = JSON.parse(event.body)
   const { status, action, code } = params
   let result, coupon, collection, user
@@ -23,7 +23,7 @@ exports.handler = async function (event, context) {
     case "getByCode":
       user = context.clientContext.user
       if (user) {
-        collection = await getCollection()
+        collection = await getCollection(client)
         coupon = await collection.findOne({ code: user.user_metadata.appsumo_code })
 
         result = {
@@ -40,7 +40,7 @@ exports.handler = async function (event, context) {
       break
 
     case "getByCodeAndStatus":
-      collection = await getCollection()
+      collection = await getCollection(client)
       coupon = await collection.findOne({ code, status })
 
       result = {
@@ -53,7 +53,7 @@ exports.handler = async function (event, context) {
     case "activate":
       user = context.clientContext.user
       if (user) {
-        collection = await getCollection()
+        collection = await getCollection(client)
         const writeOpResult = await collection.updateOne(
           { code: user.user_metadata.appsumo_code },
           { $set: { status: "active", email: user.email } }
