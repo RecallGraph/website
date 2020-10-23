@@ -31,6 +31,7 @@ export default function AppSumoForm () {
   const classes = useStyles()
 
   const isLoggedIn = identity && identity.isLoggedIn
+  let finished = false
   const fieldSetterMap = {
     name: setName,
     email: setEmail,
@@ -89,8 +90,10 @@ export default function AppSumoForm () {
 
           setMessage('Redirecting to account page...')
           setOpen(true)
+          finished = true
           await navigate('/account')
-        } else {
+        }
+        else {
           setMessage(`AppSumo Code '${code}' was not found in the system.`)
           setOpen(true)
           setColor('secondary')
@@ -102,7 +105,9 @@ export default function AppSumoForm () {
         setColor('secondary')
       }
       finally {
-        setLoading(false)
+        if (!finished) {
+          setLoading(false)
+        }
       }
 
       // fetch("/", {
