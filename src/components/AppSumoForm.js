@@ -24,9 +24,10 @@ export default function AppSumoForm () {
   const [password, setPassword] = useState("")
   const [code, setCode] = useState("")
   const [open, setOpen] = useState(false)
-  const [status, setStatus] = useState("")
+  const [message, setMessage] = useState("")
   const [verified, setVerified] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [color, setColor] = useState('primary')
   const classes = useStyles()
 
   const isLoggedIn = identity && identity.isLoggedIn
@@ -45,39 +46,63 @@ export default function AppSumoForm () {
     e.preventDefault()
     setLoading(true)
     if (verified) {
-      let response = await fetch("/.netlify/functions/appSumo", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          action: 'getByCodeAndStatus',
-          code,
-          status: 'free'
-        })
-      })
-      let coupon = await response.json()
-
-      if (Object.keys(coupon).length) {
-        await identity.signupUser(email, password, {
-          full_name: name,
-          appsumo_code: code
-        })
-
-        const user = await identity.loginUser(email, password, true)
-
-        await fetch("/.netlify/functions/appSumo", {
+      try {
+        setMessage('Verifying AppSumo Code...')
+        setOpen(true)
+        let response = await fetch("/.netlify/functions/appSumo", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${user.token.access_token}`
+            "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            action: 'activate'
+            action: 'getByCodeAndStatus',
+            code,
+            status: 'free'
           })
         })
+        let coupon = await response.json()
 
-        navigate('/account')
+        if (Object.keys(coupon).length) {
+          setMessage('Registering user...')
+          setOpen(true)
+          await identity.signupUser(email, password, {
+            full_name: name,
+            appsumo_code: code
+          })
+
+          setMessage('Logging in...')
+          setOpen(true)
+          const user = await identity.loginUser(email, password, true)
+
+          setMessage('Activating AppSumo Code...')
+          setOpen(true)
+          await fetch("/.netlify/functions/appSumo", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${user.token.access_token}`
+            },
+            body: JSON.stringify({
+              action: 'activate'
+            })
+          })
+
+          setMessage('Redirecting to account page...')
+          setOpen(true)
+          await navigate('/account')
+        } else {
+          setMessage(`AppSumo Code '${code}' was not found in the system.`)
+          setOpen(true)
+          setColor('secondary')
+        }
+      }
+      catch (e) {
+        setMessage(e.message)
+        setOpen(true)
+        setColor('secondary')
+      }
+      finally {
+        setLoading(false)
       }
 
       // fetch("/", {
@@ -100,7 +125,7 @@ export default function AppSumoForm () {
       //   })
     }
     else {
-      setStatus("Captcha not verified. Please select again.")
+      setMessage("Captcha not verified. Please select again.")
       setOpen(true)
       setLoading(false)
     }
@@ -213,9 +238,10 @@ export default function AppSumoForm () {
                     <Snackbar
                       open={open}
                       onClose={() => setOpen(false)}
-                      message={status}
+                      message={message}
                       TransitionComponent={Fade}
                       autoHideDuration={3000}
+                      color={color}
                     />
                   </GridItem>
                 </GridContainer>

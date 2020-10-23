@@ -1,4 +1,4 @@
-import { CircularProgress } from "@material-ui/core"
+import { CircularProgress, Fade, Snackbar } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import classNames from "classnames"
 import { navigate } from "gatsby"
@@ -15,35 +15,46 @@ const useStyles = makeStyles(accountPageStyle)
 
 function AccountPage () {
   const classes = useStyles();
-  const identity = useIdentityContext()
-  const isLoggedIn = identity && identity.isLoggedIn
-  const [coupon, setCoupon] = useState(false)
-  const [loading, setLoading] = useState(true)
+  const identity = useIdentityContext();
+  const isLoggedIn = identity && identity.isLoggedIn;
+  const [coupon, setCoupon] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const getCode = async () => {
-      const response = await fetch("/.netlify/functions/appSumo", {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${identity.user.token.access_token}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          action: 'getByCode'
-        })
-      })
-      const data = await response.json()
+      try {
+        const response = await fetch("/.netlify/functions/appSumo", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${identity.user.token.access_token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            action: "getByCode"
+          })
+        });
 
-      setLoading(false)
-      if (Object.keys(data).length) {
-        setCoupon(data)
+        const data = await response.json();
+        if (Object.keys(data).length) {
+          setCoupon(data);
+        }
       }
-    }
+      catch (e) {
+        setMessage(e.message);
+        setOpen(true);
+      }
+      finally {
+        setLoading(false);
+      }
+
+    };
 
     if (isLoggedIn) {
-      getCode()
+      getCode();
     }
-  }, [isLoggedIn, identity])
+  }, [isLoggedIn, identity]);
 
   if (isLoggedIn) {
     const imageClasses = classNames(
@@ -75,21 +86,32 @@ function AccountPage () {
                   <AppSumoCode coupon={coupon} user={identity.user} classes={classes} />
                 </GridItem>
                 : null}
+            {open ?
+              <GridItem xs={12} md={6} style={{ marginTop: "30px", textAlign: "center" }}>
+                <Snackbar
+                  open={open}
+                  onClose={() => setOpen(false)}
+                  message={message}
+                  TransitionComponent={Fade}
+                  autoHideDuration={3000}
+                />
+              </GridItem>
+              : null}
           </GridContainer>
         </div>
       </div>
     );
   }
 
-  if (typeof window !== 'undefined') {
-    navigate("/", { replace: true })
+  if (typeof window !== "undefined") {
+    navigate("/", { replace: true });
   }
 
-  return 'Redirecting...'
+  return "Redirecting...";
 }
 
 export default function() {
   return <RenderOnMount>
     <AccountPage />
-  </RenderOnMount>
+  </RenderOnMount>;
 }
