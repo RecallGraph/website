@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env`
+  path: `.env`,
 })
 
 module.exports = {
@@ -8,15 +8,22 @@ module.exports = {
     description: `A versioning data store for time-variant graph data.`,
     author: `@rkr-dev,`,
     image: `static/Rg-1-bg.jpg`,
-    keywords: ["recallgraph", "temporal graphs", "dynamic networks", "data versioning", "streaming graph data",
-      "foxx microservice", "arangodb"],
+    keywords: [
+      "recallgraph",
+      "temporal graphs",
+      "dynamic networks",
+      "data versioning",
+      "streaming graph data",
+      "foxx microservice",
+      "arangodb",
+    ],
     siteUrl: "https://recallgraph.tech/",
     siteVerification: {
       google: "",
-      bing: ""
+      bing: "",
     },
     social: {
-      twitter: "@recallgraph"
+      twitter: "@recallgraph",
     },
     socialLinks: {
       github: `https://github.com/RecallGraph/RecallGraph`,
@@ -24,25 +31,24 @@ module.exports = {
       facebook: ``,
       instagram: ``,
       linkedin: ``,
-      email: `info@recallgraph.tech`
+      email: `info@recallgraph.tech`,
     },
     organization: {
       name: `RecallGraph`,
-      url: `https://github.com/RecallGraph`
-    }
+      url: `https://github.com/RecallGraph`,
+    },
   },
   plugins: [
     "gatsby-plugin-resolve-src",
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-offline`,
     "gatsby-plugin-sass",
     "gatsby-plugin-material-ui",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/static`
-      }
+        path: `${__dirname}/static`,
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -70,20 +76,8 @@ module.exports = {
         // Any additional optional fields
         sampleRate: 100,
         siteSpeedSampleRate: 10,
-        cookieDomain: "recallgraph.tech"
-      }
+        cookieDomain: "recallgraph.tech",
+      },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `recallgraph`,
-        short_name: `recallgraph`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `static/logo.png` // This path is relative to the root of the site.
-      }
-    }
-  ]
+  ],
 }
