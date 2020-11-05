@@ -38,7 +38,7 @@ class AboutUs extends React.Component {
                 href="https://github.com/RecallGraph/RecallGraph#do-i-need-a-versioned-graph-database"
                 color="info"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
               >
                 Read More...
               </Button>

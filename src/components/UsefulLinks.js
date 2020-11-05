@@ -17,7 +17,7 @@ class UsefulLinks extends React.Component {
               href="https://github.com/RecallGraph/RecallGraph/releases"
               color="info"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               Downloads
             </Button>
@@ -25,7 +25,7 @@ class UsefulLinks extends React.Component {
               href="https://docs.recallgraph.tech/"
               color="info"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               Docs
             </Button>
@@ -41,7 +41,7 @@ class UsefulLinks extends React.Component {
               href="https://github.com/RecallGraph/RecallGraph"
               color="info"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               Source
             </Button>

@@ -20,7 +20,7 @@ function HeaderLinks(props) {
           href="https://github.com/RecallGraph/RecallGraph/releases"
           color="transparent"
           target="_blank"
-          rel={"noopener noreferrer"}
+          rel={"noopener"}
           className={classes.navLink}
         >
           <GetApp className={classes.icons} /> Downloads
@@ -39,7 +39,7 @@ function HeaderLinks(props) {
             <a
               href="https://docs.recallgraph.tech/"
               target="_blank"
-              rel={"noopener noreferrer"}
+              rel={"noopener"}
               className={classes.dropdownLink}
             >
               <Notes className={classes.icons} /> Introduction
@@ -47,7 +47,7 @@ function HeaderLinks(props) {
             <a
               href="https://docs.recallgraph.tech/working-with-recallgraph/guide"
               target="_blank"
-              rel={"noopener noreferrer"}
+              rel={"noopener"}
               className={classes.dropdownLink}
             >
               <Subject className={classes.icons} /> Guide
