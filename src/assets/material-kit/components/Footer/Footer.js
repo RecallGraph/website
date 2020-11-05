@@ -24,7 +24,7 @@ function Footer({ ...props }) {
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://adityamukho.com/tag/historical-graphs/"
+                href="https://blog.recallgraph.tech/"
                 className={classes.block}
                 target="_blank"
                 rel={"noopener noreferrer"}
