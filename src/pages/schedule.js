@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import { MoneyOff, Schedule, StarBorder } from "@material-ui/icons"
 import classNames from "classnames"
 import React from "react"
+import { useIdentityContext } from "react-netlify-identity-widget"
 import Card from "../assets/material-kit/components/Card/Card"
 import CardBody from "../assets/material-kit/components/Card/CardBody"
 import CardFooter from "../assets/material-kit/components/Card/CardFooter"
@@ -10,7 +11,7 @@ import Button from "../assets/material-kit/components/CustomButtons/Button"
 import GridContainer from "../assets/material-kit/components/Grid/GridContainer.js"
 import GridItem from "../assets/material-kit/components/Grid/GridItem.js"
 import landingPageStyle from "../assets/material-kit/styles/landingPageStyle"
-import { useIdentityContext } from "react-netlify-identity-widget"
+import AppSumoOffer from "../components/AppSumoOffer"
 
 const useStyles = makeStyles(landingPageStyle)
 
@@ -39,6 +40,11 @@ export default function SchedulePage () {
   return (
     <div className={classNames(classes.main, classes.mainRaised)} key={"main"}>
       <div className={classes.container}>
+        <GridContainer justify="center">
+          <GridItem xs={12} style={{ "marginTop": "30px", "padding": "10px" }}>
+            <AppSumoOffer/>
+          </GridItem>
+        </GridContainer>
         <GridContainer justify="center">
           <GridItem xs={12} md={4} style={{ "marginTop": "30px", "padding": "10px" }}>
             <Card style={{ height: "90%" }}>
