@@ -39,7 +39,7 @@ function HeaderLinks(props) {
             <a
               href="https://docs.recallgraph.tech/"
               target="_blank"
-              rel={"noopener"}
+              rel={"noopener noreferrer"}
               className={classes.dropdownLink}
             >
               <Notes className={classes.icons} /> Introduction
@@ -47,7 +47,7 @@ function HeaderLinks(props) {
             <a
               href="https://docs.recallgraph.tech/working-with-recallgraph/guide"
               target="_blank"
-              rel={"noopener"}
+              rel={"noopener noreferrer"}
               className={classes.dropdownLink}
             >
               <Subject className={classes.icons} /> Guide

@@ -27,7 +27,7 @@ function Footer({ ...props }) {
                 href="https://blog.recallgraph.tech/"
                 className={classes.block}
                 target="_blank"
-                rel={"noopener"}
+                rel={"noopener noreferrer"}
               >
                 Blog
               </a>
