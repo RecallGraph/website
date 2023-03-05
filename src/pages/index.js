@@ -1,7 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames"
 import React from "react"
-import AppSumoOffer from "../components/AppSumoOffer";
 import landingPageStyle from "../assets/material-kit/styles/landingPageStyle"
 import AboutUs from "../components/AboutUs"
 import ContactUs from "../components/ContactUs"
@@ -21,7 +20,6 @@ export default function LandingPage () {
     >
       <div className={classes.container}>
         <SocialSharing />
-        <AppSumoOffer/>
         <WhatWeOffer />
         <AboutUs />
         <YoutubeVideo

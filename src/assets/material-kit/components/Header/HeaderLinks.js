@@ -1,11 +1,9 @@
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
 import withStyles from "@material-ui/core/styles/withStyles"
-import { Event, GetApp, HelpOutline, Notes, Subject } from "@material-ui/icons"
-import { Link } from "gatsby"
+import { GetApp, HelpOutline, Notes, Subject } from "@material-ui/icons"
 import React from "react"
 import "react-netlify-identity-widget/styles.css"
-import AccountLink from "../../../../components/AccountLink"
 import headerLinksStyle from "../../styles/headerLinksStyle"
 import Button from "../CustomButtons/Button"
 import CustomDropdown from "../CustomDropdown/CustomDropdown"
@@ -55,12 +53,6 @@ function HeaderLinks(props) {
           ]}
         />
       </ListItem>
-      <ListItem className={classes.listItem}>
-        <Link to={"/schedule"} className={classes.navLink}>
-          <Event className={classes.icons} /> Schedule a Call
-        </Link>
-      </ListItem>
-      <AccountLink {...props} />
     </List>
   )
 }
